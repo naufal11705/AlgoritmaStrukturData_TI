@@ -49,15 +49,15 @@ public class Buku04 {
 2. Perhatikan class Buku pada Praktikum 1 tersebut, ada berapa atribut yang dimiliki oleh class
 Buku? Sebutkan apa saja atributnya! <br>
         
-    ```
+    ``
     Pada praktikum 1 terdapat 5 atribut, yaitu judul, pengarang, halaman, stok, harga
-    ```
+    ``
         
 3. Ada berapa method yang dimiliki oleh class tersebut? Sebutkan apa saja methodnya!
 
-    ```
+    ``
     Pada class tersebut terdapat 4 method, yaitu tampilInformasi(), terjual(), restock(), gantiHarga()
-    ```
+    ``
 
 4. Perhatikan method terjual() yang terdapat di dalam class Buku. Modifikasi isi method tersebut sehingga proses pengurangan hanya dapat dilakukan jika stok masih ada (lebih besar dari 0)!
 
@@ -71,9 +71,9 @@ Buku? Sebutkan apa saja atributnya! <br>
 
 5. Menurut Anda, mengapa method restock() mempunyai satu parameter berupa bilangan int?
 
-    ```
+    ``
     Method restock() memiliki 1 paramater karena hanya membutuhkan jumlah buku yang ingin di restock
-    ```
+    ``
 
 
 6. Commit dan push kode program ke Github
@@ -108,24 +108,24 @@ public class BukuMain04 {
 ### **2.2.3 Pertanyaan**
 1. Pada class BukuMain, tunjukkan baris kode program yang digunakan untuk proses instansiasi! Apa nama object yang dihasilkan?
 
-    ```java
+    ``
     Nama object yang dihasilkan adalah bk1
-    ```
+    ``
     ```java
     Buku04 bk1 = new Buku04();
     ```
 
 2. Bagaimana cara mengakses atribut dan method dari suatu objek?
 
-    ```
+    ``
     Untuk mengakses atribut dan method daru suatu objek, maka kita perlu memasukkan nama object, dilanjutkan dengan tanda . (titik), kemudian memasukkan nama atribut atau method 
-    ```
+    ``
 
 3. Mengapa hasil output pemanggilan method tampilInformasi() pertama dan kedua berbeda?
 
-    ```
+    ``
     Karena informasi pertama dan kedua dari objek yang berbeda
-    ```
+    ``
 
 
 ## 2.3 Percobaan 3: Membuat Konstruktor
@@ -191,21 +191,21 @@ public class Buku04 {
 
 2. Perhatikan class BukuMain. Apa sebenarnya yang dilakukan pada baris program berikut?
 
-    ```
+    ``
     Baris kode tersebut melakukan instansiasi berparameter
-    ```
+    ``
 
 3. Hapus konstruktor default pada class Buku, kemudian compile dan run program. Bagaimana hasilnya? Jelaskan mengapa hasilnya demikian!
 
-    
+    ``
     Muncul peringatan "The constructor Buku04() is undefined", hal ini dikarenakan pada BukuMain04.java terdapat 2 instansiasi, yang pertama tidak terdapat paramater, yang kedua membutuhkan parameter, sehingga konstruktor nya pun juga berbeda
+    ``
     
-
 4. Setelah melakukan instansiasi object, apakah method di dalam class Buku harus diakses secara berurutan? Jelaskan alasannya!
 
-    ```
+    ``
     Setelah melakukan instansiasi objek, method tidak perlu diakses secara berurutan, setiap method bersifat independen, tidak bergantung pada urutan pemanggilan
-    ```
+    ``
 
 5. Buat object baru dengan nama buku<NamaMahasiswa> menggunakan konstruktor berparameter dari class Buku!
 
