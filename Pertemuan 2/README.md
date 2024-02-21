@@ -1,4 +1,15 @@
-# JOBSHEET 2 - OBJECT
+
+
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <h6>Algoritma dan Struktur Data 2023-2024</h6>
+  <img src="./docs/LogoPolinema.png" alt="Foto" style="max-width: 80px;">
+</div>
+
+***
+
+<p style="text-align:center;"><h1>JOBSHEET 2 - OBJECT</h1></p>
+
+<h1 style="display: block; text-align: center;">JOBSHEET 2 - OBJECT</h1>
 
 **Nama :** Ahmad Naufal Waskito Aji<br>
 **NIM :** 2341720080<br>
