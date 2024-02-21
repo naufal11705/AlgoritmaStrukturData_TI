@@ -1,20 +1,10 @@
 
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <h6>Algoritma dan Struktur Data 2023-2024</h6>
-  <img src="./docs/LogoPolinema.png" alt="Foto" style="max-width: 80px;">
-</div>
+<h6>Algoritma dan Struktur Data 2023-2024</h6>
 
 ***
 
-<p style="text-align:center;"><h1>JOBSHEET 2 - OBJECT</h1></p>
-
-<h1 style="display: block; text-align: center;">JOBSHEET 2 - OBJECT</h1>
-
-**Nama :** Ahmad Naufal Waskito Aji<br>
-**NIM :** 2341720080<br>
-**Kelas :** TI-1B<br>
-**Absen :** 04
+# JOBSHEET II - OBJECT
 
 ## 2.1 Percobaan 1: Deklarasi Class, Atribut dan Method
 ### **2.1.1 Langkah-langkah percobaan**
