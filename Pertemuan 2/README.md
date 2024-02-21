@@ -1,16 +1,8 @@
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <h6>Algoritma dan Struktur Data 2023-2024</h6>
-  <img src="./docs/LogoPolinema.png" alt="Foto" width="70" height="70">
-</div>
-
+<h6>Algoritma dan Struktur Data 2023-2024</h6>
 
 ***
 
-Algoritma dan Struktur Data 2023-2024
-
-***
-
-# JOBSHEET II - OBJECT
+# JOBSHEET II -  OBJECT
 
 ## 2.1 Percobaan 1: Deklarasi Class, Atribut dan Method
 ### **2.1.1 Langkah-langkah percobaan**
@@ -50,18 +42,20 @@ public class Buku04 {
 ### **2.1.3 Pertanyaan**
 1. Sebutkan dua karakteristik class atau object!
 2. Perhatikan class Buku pada Praktikum 1 tersebut, ada berapa atribut yang dimiliki oleh class
-Buku? Sebutkan apa saja atributnya!
+Buku? Sebutkan apa saja atributnya! <br>
+        
+    ```
+    Pada praktikum 1 terdapat 5 atribut, yaitu judul, pengarang, halaman, stok, harga
+    ```
+        
 3. Ada berapa method yang dimiliki oleh class tersebut? Sebutkan apa saja methodnya!
-4. Perhatikan method terjual() yang terdapat di dalam class Buku. Modifikasi isi method tersebut
-sehingga proses pengurangan hanya dapat dilakukan jika stok masih ada (lebih besar dari 0)!
-5. Menurut Anda, mengapa method restock() mempunyai satu parameter berupa bilangan int?
-6. Commit dan push kode program ke Github
 
-Jawaban<br>
-1. -<br>
-2. Pada praktikum 1 terdapat 5 atribut, yaitu judul, pengarang, halaman, stok, harga<br>
-3. Pada class tersebut terdapat 4 method, yaitu tampilInformasi(), terjual(), restock(), gantiHarga()<br>
-4. -
+    ```
+    Pada class tersebut terdapat 4 method, yaitu tampilInformasi(), terjual(), restock(), gantiHarga()
+    ```
+
+4. Perhatikan method terjual() yang terdapat di dalam class Buku. Modifikasi isi method tersebut sehingga proses pengurangan hanya dapat dilakukan jika stok masih ada (lebih besar dari 0)!
+
     ```java
     void terjual(int jml) {
         if(stok > jml) {
@@ -69,8 +63,17 @@ Jawaban<br>
         }
     }
     ```
-5. Method restock() memiliki 1 paramater karena hanya membutuhkan jumlah buku yang ingin di restock
-6. -
+
+5. Menurut Anda, mengapa method restock() mempunyai satu parameter berupa bilangan int?
+
+    ```
+    Method restock() memiliki 1 paramater karena hanya membutuhkan jumlah buku yang ingin di restock
+    ```
+
+
+6. Commit dan push kode program ke Github
+<br>
+
 
 ## 2.2 Percobaan 2: Instansiasi Object, serta Mengakses Atribut dan Method
 ### **2.2.1 Langkah-langkah percobaan**
