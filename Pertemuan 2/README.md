@@ -1,12 +1,8 @@
 <div style="display: flex; justify-content: space-between; align-items: center;">
   <h6>Algoritma dan Struktur Data 2023-2024</h6>
-  <img src="./docs/LogoPolinema.png" alt="Foto" style="max-width: 50;">
+  <img src="./docs/LogoPolinema.png" alt="Foto" width="70" height="70">
 </div>
 
-<p align="center">
-  <h6>Algoritma dan Struktur Data 2023-2024</h6>
-  <img src="path/to/your/image.jpg" alt="Foto" width="100">
-</p>
 
 ***
 
