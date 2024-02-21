@@ -17,5 +17,8 @@ public class BukuMain04 {
         bk2.terjual(11);
         bk2.tampilInformasi();
 
+        Buku04 BukuNaufal = new Buku04("Tips Gacha Wangy", "Ahmad Naufal Waskito Aji", 1250, 5, 175000);
+        BukuNaufal.tampilInformasi();
+
     }
 }
