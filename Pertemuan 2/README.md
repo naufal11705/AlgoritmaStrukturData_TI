@@ -41,6 +41,11 @@ public class Buku04 {
 
 ### **2.1.3 Pertanyaan**
 1. Sebutkan dua karakteristik class atau object!
+
+    ```
+
+    ```
+
 2. Perhatikan class Buku pada Praktikum 1 tersebut, ada berapa atribut yang dimiliki oleh class
 Buku? Sebutkan apa saja atributnya! <br>
         
@@ -72,7 +77,6 @@ Buku? Sebutkan apa saja atributnya! <br>
 
 
 6. Commit dan push kode program ke Github
-<br>
 
 
 ## 2.2 Percobaan 2: Instansiasi Object, serta Mengakses Atribut dan Method
@@ -102,18 +106,26 @@ public class BukuMain04 {
 ![Hasil](./docs/2.2.2.png)
 
 ### **2.2.3 Pertanyaan**
-1. Pada class BukuMain, tunjukkan baris kode program yang digunakan untuk proses instansiasi!
-Apa nama object yang dihasilkan?
-2. Bagaimana cara mengakses atribut dan method dari suatu objek?
-3. Mengapa hasil output pemanggilan method tampilInformasi() pertama dan kedua berbeda?
+1. Pada class BukuMain, tunjukkan baris kode program yang digunakan untuk proses instansiasi! Apa nama object yang dihasilkan?
 
-Jawaban<br>
-1. Nama object yang dihasilkan adalah bk1
+    ```java
+    Nama object yang dihasilkan adalah bk1
+    ```
     ```java
     Buku04 bk1 = new Buku04();
     ```
-2. Untuk mengakses atribut dan method daru suatu objek, maka kita perlu memasukkan nama object, dilanjutkan dengan tanda . (titik), kemudian memasukkan nama atribut atau method 
-3. Karena informasi pertama dan kedua dari objek yang berbeda
+
+2. Bagaimana cara mengakses atribut dan method dari suatu objek?
+
+    ```
+    Untuk mengakses atribut dan method daru suatu objek, maka kita perlu memasukkan nama object, dilanjutkan dengan tanda . (titik), kemudian memasukkan nama atribut atau method 
+    ```
+
+3. Mengapa hasil output pemanggilan method tampilInformasi() pertama dan kedua berbeda?
+
+    ```
+    Karena informasi pertama dan kedua dari objek yang berbeda
+    ```
 
 
 ## 2.3 Percobaan 3: Membuat Konstruktor
@@ -165,19 +177,8 @@ public class Buku04 {
 
 ### **2.3.3 Pertanyaan**
 
-1. Pada class Buku di Percobaan 3, tunjukkan baris kode program yang digunakan untuk
-mendeklarasikan konstruktor berparameter!
-2. Perhatikan class BukuMain. Apa sebenarnya yang dilakukan pada baris program berikut?
-3. Hapus konstruktor default pada class Buku, kemudian compile dan run program. Bagaimana
-hasilnya? Jelaskan mengapa hasilnya demikian!
-4. Setelah melakukan instansiasi object, apakah method di dalam class Buku harus diakses
-secara berurutan? Jelaskan alasannya!
-5. Buat object baru dengan nama buku<NamaMahasiswa> menggunakan konstruktor
-berparameter dari class Buku!
-6. Commit dan push kode program ke Github
+1. Pada class Buku di Percobaan 3, tunjukkan baris kode program yang digunakan untuk mendeklarasikan konstruktor berparameter!
 
-Jawaban<br>
-1. -
     ```java
     public Buku04(String jud, String pg, int hal, int stok, int har) {
         judul = jud;
@@ -187,25 +188,44 @@ Jawaban<br>
         harga = har;
     }
     ```
-2. Baris kode tersebut melakukan instansiasi berparameter
-3. Muncul peringatan "The constructor Buku04() is undefined", hal ini dikarenakan pada BukuMain04.java terdapat 2 instansiasi, yang pertama tidak terdapat paramater, yang kedua membutuhkan parameter, sehingga konstruktor nya pun juga berbeda
-4. Setelah melakukan instansiasi objek, method tidak perlu diakses secara berurutan, setiap method bersifat independen, tidak bergantung pada urutan pemanggilan
-5. 
+
+2. Perhatikan class BukuMain. Apa sebenarnya yang dilakukan pada baris program berikut?
+
+    ```
+    Baris kode tersebut melakukan instansiasi berparameter
+    ```
+
+3. Hapus konstruktor default pada class Buku, kemudian compile dan run program. Bagaimana hasilnya? Jelaskan mengapa hasilnya demikian!
+
+    ```
+    Muncul peringatan "The constructor Buku04() is undefined", hal ini dikarenakan pada BukuMain04.java terdapat 2 instansiasi, yang pertama tidak terdapat paramater, yang kedua membutuhkan parameter, sehingga konstruktor nya pun juga berbeda
+    ```
+
+4. Setelah melakukan instansiasi object, apakah method di dalam class Buku harus diakses secara berurutan? Jelaskan alasannya!
+
+    ```
+    Setelah melakukan instansiasi objek, method tidak perlu diakses secara berurutan, setiap method bersifat independen, tidak bergantung pada urutan pemanggilan
+    ```
+
+5. Buat object baru dengan nama buku<NamaMahasiswa> menggunakan konstruktor berparameter dari class Buku!
+
     ```java
     Buku04 BukuNaufal = new Buku04("Tips Gacha Wangy", "Ahmad Naufal Waskito Aji", 1250, 5, 175000);
     BukuNaufal.tampilInformasi();
     ```
-6. -
+
+6. Commit dan push kode program ke Github
+
 
 ## 2.4 Latihan Praktikum
 1. Pada class Buku yang telah dibuat, tambahkan tiga method yaitu hitungHargaTotal(),
-hitungDiskon(), dan hitungHargaBayar() dengan penjelasan sebagai berikut:
-o Method hitungHargaTotal() digunakan untuk menghitung harga total yang merupakan perkalian antara harga dengan jumlah buku yang terjual
-o Method hitungDiskon() digunakan untuk menghitung diskon dengan aturan berikut:
-    ▪ Jika harga total lebih dari 150000, maka harga didiskon sebesar 12%
-    ▪ Jika harga total antara 75000 sampai 150000, maka harga didiskon sebesar 5%
-    ▪ Jika harga total kurang dari 75000, maka harga tidak didiskon
-o Method hitungHargaBayar() digunakan untuk menghitung harga total setelah dikurangi diskon
+hitungDiskon(), dan hitungHargaBayar() dengan penjelasan sebagai berikut: <br>
+- Method hitungHargaTotal() digunakan untuk menghitung harga total yang merupakan perkalian antara harga dengan jumlah buku yang terjual <br>
+- Method hitungDiskon() digunakan untuk menghitung diskon dengan aturan berikut: <br>
+    - Jika harga total lebih dari 150000, maka harga didiskon sebesar 12% <br>
+    - Jika harga total antara 75000 sampai 150000, maka harga didiskon sebesar 5% <br>
+    - Jika harga total kurang dari 75000, maka harga tidak didiskon <br>
+- Method hitungHargaBayar() digunakan untuk menghitung harga total setelah dikurangi diskon
 
 ```java
     int hitungHargaTotal(int jml) {
@@ -229,9 +249,9 @@ o Method hitungHargaBayar() digunakan untuk menghitung harga total setelah dikur
 
 2. Buat program berdasarkan class diagram berikut ini!
 Penjelasan dari atribut dan method pada class Dragon tersebut adalah sebagai berikut:
-• Atribut x digunakan untuk menyimpan posisi koordinat x (mendatar) dari dragon, sedangkan atribut y untuk posisi koordinat y (vertikal)
-• Atribut width digunakan untuk menyimpan lebar dari area permainan, sedangkan height untuk menyimpan panjang area
-• Method moveLeft() digunakan untuk mengubah posisi dragon ke kiri (koordinat x akan berkurang 1), sedangkan moveRight() untuk bergerak ke kanan (koordinat x akan bertambah 1). Perlu diperhatikan bahwa koordinat x tidak boleh lebih kecil dari 0 atau lebih besar dari nilai width. Jika koordinat x < 0 atau x > width maka panggil method detectCollision()
-• Method moveUp() digunakan untuk mengubah posisi dragon ke atas (koordinat y akan berkurang 1), sedangkan moveDown() untuk bergerak ke bawah (koordinat y akan bertambah 1). Perlu diperhatikan bahwa koordinat y tidak boleh lebih kecil dari 0 atau lebih besar dari nilai height. Jika koordinat y < 0 atau y > height maka panggil method detectCollision()
-• Method detectCollision() akan mencetak pesan “Game Over” apabila dragon menyentuh ujung area permainan.
+- Atribut x digunakan untuk menyimpan posisi koordinat x (mendatar) dari dragon, sedangkan atribut y untuk posisi koordinat y (vertikal)
+- Atribut width digunakan untuk menyimpan lebar dari area permainan, sedangkan height untuk menyimpan panjang area
+- Method moveLeft() digunakan untuk mengubah posisi dragon ke kiri (koordinat x akan berkurang 1), sedangkan moveRight() untuk bergerak ke kanan (koordinat x akan bertambah 1). Perlu diperhatikan bahwa koordinat x tidak boleh lebih kecil dari 0 atau lebih besar dari  nilai width. Jika koordinat x < 0 atau x > width maka panggil method detectCollision()
+- Method moveUp() digunakan untuk mengubah posisi dragon ke atas (koordinat y akan berkurang 1), sedangkan moveDown() untuk bergerak ke bawah (koordinat y akan bertambah 1). Perlu diperhatikan bahwa koordinat y tidak boleh lebih kecil dari 0 atau lebih besar dari nilai height. Jika koordinat y < 0 atau y > height maka panggil method detectCollision()
+- Method detectCollision() akan mencetak pesan “Game Over” apabila dragon menyentuh ujung area permainan
 
