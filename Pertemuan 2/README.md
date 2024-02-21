@@ -1,6 +1,4 @@
-
-
-<h6>Algoritma dan Struktur Data 2023-2024</h6>
+Algoritma dan Struktur Data 2023-2024
 
 ***
 
