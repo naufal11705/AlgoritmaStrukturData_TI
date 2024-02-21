@@ -42,9 +42,9 @@ public class Buku04 {
 ### **2.1.3 Pertanyaan**
 1. Sebutkan dua karakteristik class atau object!
 
-    ```
-
-    ```
+    ``
+    answer
+    ``
 
 2. Perhatikan class Buku pada Praktikum 1 tersebut, ada berapa atribut yang dimiliki oleh class
 Buku? Sebutkan apa saja atributnya! <br>
