@@ -197,9 +197,9 @@ public class Buku04 {
 
 3. Hapus konstruktor default pada class Buku, kemudian compile dan run program. Bagaimana hasilnya? Jelaskan mengapa hasilnya demikian!
 
-    ~~~
+    
     Muncul peringatan "The constructor Buku04() is undefined", hal ini dikarenakan pada BukuMain04.java terdapat 2 instansiasi, yang pertama tidak terdapat paramater, yang kedua membutuhkan parameter, sehingga konstruktor nya pun juga berbeda
-    ~~~
+    
 
 4. Setelah melakukan instansiasi object, apakah method di dalam class Buku harus diakses secara berurutan? Jelaskan alasannya!
 
