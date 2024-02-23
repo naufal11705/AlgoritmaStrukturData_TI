@@ -4,6 +4,12 @@
 
 # JOBSHEET II -  OBJECT
 
+Nama : Ahmad Naufal Waskito Aji <br>
+NIM : 2341720080 <br>
+Kelas : TI-1B
+
+***
+
 ## 2.1 Percobaan 1: Deklarasi Class, Atribut dan Method
 ### **2.1.1 Langkah-langkah percobaan**
 ```java
@@ -43,7 +49,7 @@ public class Buku04 {
 1. Sebutkan dua karakteristik class atau object!
 
     ``
-    answer
+    Karakteristik class atau object adalah "Mempunyai Sesuatu" dan "Melakukan Sesuatu"
     ``
 
 2. Perhatikan class Buku pada Praktikum 1 tersebut, ada berapa atribut yang dimiliki oleh class
@@ -74,9 +80,6 @@ Buku? Sebutkan apa saja atributnya! <br>
     ``
     Method restock() memiliki 1 paramater karena hanya membutuhkan jumlah buku yang ingin di restock
     ``
-
-
-6. Commit dan push kode program ke Github
 
 
 ## 2.2 Percobaan 2: Instansiasi Object, serta Mengakses Atribut dan Method
@@ -227,25 +230,75 @@ hitungDiskon(), dan hitungHargaBayar() dengan penjelasan sebagai berikut: <br>
     - Jika harga total kurang dari 75000, maka harga tidak didiskon <br>
 - Method hitungHargaBayar() digunakan untuk menghitung harga total setelah dikurangi diskon
 
-```java
-    int hitungHargaTotal(int jml) {
-        return harga * jml;
-    }
+    ```java
+    public class Buku04 {
 
-    int hitungDiskon(int jml) {
-        if (hitungHargaTotal(jml) > 150000) {
-            return hitungHargaTotal(jml) * 12 / 100;
-        } else if (hitungHargaTotal(jml) >= 750005 && hitungHargaTotal(jml) <= 150000 ) {
-            return hitungHargaTotal(jml) * 5 / 100;
-        } else {
-            return hitungHargaTotal(jml);
+        String judul, pengarang;
+        int halaman, stok, harga, terjual;
+
+        void tampilInformasi() {
+            System.out.println("Judul: " + judul);
+            System.out.println("Pengarang: " + pengarang);
+            System.out.println("Jumlah halaman: " + halaman);
+            System.out.println("Sisa stok: " + stok);
+            System.out.println("Harga: Rp " + harga);
         }
-    }
 
-    int hitungHargaBayar(int jml) {
-        return hitungHargaTotal(jml)-hitungDiskon(jml);
+        void terjual(int jml) {
+            if(stok > jml) {
+                stok -= jml;
+                terjual = jml;
+                System.out.println("Total Bayar: " + hitungHargaBayar());
+            }   
+        }
+
+        void restock(int jml) {
+            stok += jml;
+        }
+
+        void gantiHarga(int hrg) {
+            harga = hrg;
+        }
+
+        public Buku04() {
+
+        }
+
+        public Buku04(String jud, String pg, int hal, int stok, int har) {
+            judul = jud;
+            pengarang = pg;
+            halaman = hal;
+            this.stok = stok;
+            harga = har;
+        }
+
+        int hitungHargaTotal() {
+            return harga * terjual;
+        }
+
+        int hitungDiskon() {
+            if (hitungHargaTotal() > 150000) {
+                return hitungHargaTotal() * 12 / 100;
+            } else if (hitungHargaTotal() >= 75000 && hitungHargaTotal() <= 150000) {
+                return hitungHargaTotal() * 5 / 100;
+            } else {
+                return hitungHargaTotal();
+            }
+        }
+
+        int hitungHargaBayar() {
+            return hitungHargaTotal() - hitungDiskon();
+        }
+
+
+
+
     }
-```
+    ```
+
+    **Hasil Percobaan**
+
+    ![Hasil](./docs/2.4.1.png)
 
 2. Buat program berdasarkan class diagram berikut ini!
 Penjelasan dari atribut dan method pada class Dragon tersebut adalah sebagai berikut:
@@ -255,3 +308,81 @@ Penjelasan dari atribut dan method pada class Dragon tersebut adalah sebagai ber
 - Method moveUp() digunakan untuk mengubah posisi dragon ke atas (koordinat y akan berkurang 1), sedangkan moveDown() untuk bergerak ke bawah (koordinat y akan bertambah 1). Perlu diperhatikan bahwa koordinat y tidak boleh lebih kecil dari 0 atau lebih besar dari nilai height. Jika koordinat y < 0 atau y > height maka panggil method detectCollision()
 - Method detectCollision() akan mencetak pesan “Game Over” apabila dragon menyentuh ujung area permainan
 
+    **Dragon04.java**
+
+    ```java
+    public class Dragon04 {
+
+        int x, y, width, height;
+
+        void moveLeft() {
+            if (x > 0) {
+                x -= 1;
+            } else {
+                detectCollision(x, y);
+            }
+        }
+
+        void moveRight() {
+            if (x < width) {
+                x += 1;
+            } else {
+                detectCollision(x, y);
+            }
+        }
+
+        void moveUp() {
+            if (y > 0) {
+                y -= 1;
+            } else {
+                detectCollision(x, y);
+            }
+        }
+
+        void moveDown() {
+            if (x < height) {
+                x += 1;
+            } else {
+                detectCollision(x, y);
+            }
+        }
+
+        void printPosition() {
+            System.out.println("Position: " + x + ", " + y);
+        }
+
+        void detectCollision(int x, int y) {
+            System.out.println("Game Over");
+            System.exit(0);
+        }
+
+    }
+    ```
+
+    **DragonMain04.java**
+    ```java
+    public class DragonMain04 {
+        public static void main(String[] args) {
+        
+            Dragon04 dg1 = new Dragon04();
+            dg1.height = 20;
+            dg1.width = 20;
+            dg1.x = 10;
+            dg1.y = 15;
+
+            dg1.printPosition();
+
+            for (int i = 0; i<20; i++) {
+                dg1.moveRight();
+                dg1.moveUp();
+                dg1.printPosition();
+            }
+
+        }
+    }
+
+    ```
+
+    **Hasil Percobaan**
+
+    ![Hasil](./docs/2.4.2.png)
