@@ -17,8 +17,8 @@
 
 ***
 
-## 2.1 Percobaan 1: Deklarasi Class, Atribut dan Method
-### **2.1.1 Langkah-langkah percobaan**
+## Percobaan 1: Deklarasi Class, Atribut dan Method
+### **1.1 Langkah-langkah percobaan**
 ```java
 public class Buku04 {
 
@@ -48,11 +48,11 @@ public class Buku04 {
 }
 ```
 
-### **2.1.2 Verifikasi Hasil Percobaan**
+### **1.2 Verifikasi Hasil Percobaan**
 
 ![Hasil](./docs/2.1.2.png)
 
-### **2.1.3 Pertanyaan**
+### **1.3 Pertanyaan**
 1. Sebutkan dua karakteristik class atau object! <br>
     **Jawaban :**
     ``
@@ -89,8 +89,8 @@ Buku? Sebutkan apa saja atributnya! <br>
     ``
 
 
-## 2.2 Percobaan 2: Instansiasi Object, serta Mengakses Atribut dan Method
-### **2.2.1 Langkah-langkah percobaan**
+## Percobaan 2: Instansiasi Object, serta Mengakses Atribut dan Method
+### **2.1 Langkah-langkah percobaan**
 ```java
 public class BukuMain04 {
     public static void main(String[] args) {
@@ -111,11 +111,11 @@ public class BukuMain04 {
 }
 ```
 
-### **2.2.2 Verifikasi Hasil Percobaan**
+### **2.2 Verifikasi Hasil Percobaan**
 
 ![Hasil](./docs/2.2.2.png)
 
-### **2.2.3 Pertanyaan**
+### **2.3 Pertanyaan**
 1. Pada class BukuMain, tunjukkan baris kode program yang digunakan untuk proses instansiasi! Apa nama object yang dihasilkan? <br>
     **Jawaban :**
     ``
@@ -138,8 +138,8 @@ public class BukuMain04 {
     ``
 
 
-## 2.3 Percobaan 3: Membuat Konstruktor
-### **2.3.1 Langkah-langkah percobaan**
+## Percobaan 3: Membuat Konstruktor
+### **3.1 Langkah-langkah percobaan**
 ```java
 public class Buku04 {
 
@@ -181,11 +181,11 @@ public class Buku04 {
 }
 ```
 
-### **2.3.2 Verifikasi Hasil Percobaan**
+### **3.2 Verifikasi Hasil Percobaan**
 
 ![Hasil](./docs/2.3.2.png)
 
-### **2.3.3 Pertanyaan**
+### **3.3 Pertanyaan**
 
 1. Pada class Buku di Percobaan 3, tunjukkan baris kode program yang digunakan untuk mendeklarasikan konstruktor berparameter! <br>
     **Jawaban :**
@@ -225,9 +225,9 @@ public class Buku04 {
     ```
 
 
-## 2.4 Latihan Praktikum
+## Latihan Praktikum
 
-### 2.4.1 Latihan 1
+### 4.1 Latihan 1
 Pada class Buku yang telah dibuat, tambahkan tiga method yaitu hitungHargaTotal(),
 hitungDiskon(), dan hitungHargaBayar() dengan penjelasan sebagai berikut: <br>
 - Method hitungHargaTotal() digunakan untuk menghitung harga total yang merupakan perkalian antara harga dengan jumlah buku yang terjual <br>
@@ -308,7 +308,7 @@ hitungDiskon(), dan hitungHargaBayar() dengan penjelasan sebagai berikut: <br>
     ![Hasil](./docs/2.4.1.png)
 
 
-### 2.4.2 Latihan 2
+### 4.2 Latihan 2
 Buat program berdasarkan class diagram berikut ini!
 Penjelasan dari atribut dan method pada class Dragon tersebut adalah sebagai berikut:
 - Atribut x digunakan untuk menyimpan posisi koordinat x (mendatar) dari dragon, sedangkan atribut y untuk posisi koordinat y (vertikal)
