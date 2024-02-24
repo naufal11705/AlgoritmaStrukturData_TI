@@ -18,7 +18,7 @@
 ***
 
 ## Percobaan 1: Deklarasi Class, Atribut dan Method
-### **1.1 Langkah-langkah percobaan**
+### **1.1 Kode Percobaan**
 ```java
 public class Buku04 {
 
@@ -90,7 +90,7 @@ Buku? Sebutkan apa saja atributnya! <br>
 
 
 ## Percobaan 2: Instansiasi Object, serta Mengakses Atribut dan Method
-### **2.1 Langkah-langkah percobaan**
+### **2.1 Kode Percobaan**
 ```java
 public class BukuMain04 {
     public static void main(String[] args) {
@@ -139,7 +139,7 @@ public class BukuMain04 {
 
 
 ## Percobaan 3: Membuat Konstruktor
-### **3.1 Langkah-langkah percobaan**
+### **3.1 Kode Percobaan**
 ```java
 public class Buku04 {
 
