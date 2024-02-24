@@ -1,8 +1,12 @@
-<h6>Algoritma dan Struktur Data 2023-2024</h6>
+# <p align="center">JOBSHEET II - OBJECT</p>
 
-***
+![Hasil](./docs/LogoPolinema.png)
 
-# JOBSHEET II -  OBJECT
+<p align="center">
+    <img src="./docs/LogoPolinema.png" alt="Your Image Description">
+</p>
+
+**IDENTITAS MAHASISWA**
 
 Nama : Ahmad Naufal Waskito Aji <br>
 NIM : 2341720080 <br>
@@ -46,27 +50,27 @@ public class Buku04 {
 ![Hasil](./docs/2.1.2.png)
 
 ### **2.1.3 Pertanyaan**
-1. Sebutkan dua karakteristik class atau object!
-
+1. Sebutkan dua karakteristik class atau object! <br>
+    **Jawaban :**
     ``
     Karakteristik class atau object adalah "Mempunyai Sesuatu" dan "Melakukan Sesuatu"
     ``
 
 2. Perhatikan class Buku pada Praktikum 1 tersebut, ada berapa atribut yang dimiliki oleh class
 Buku? Sebutkan apa saja atributnya! <br>
-        
+    **Jawaban :**
     ``
     Pada praktikum 1 terdapat 5 atribut, yaitu judul, pengarang, halaman, stok, harga
     ``
         
-3. Ada berapa method yang dimiliki oleh class tersebut? Sebutkan apa saja methodnya!
-
+3. Ada berapa method yang dimiliki oleh class tersebut? Sebutkan apa saja methodnya! <br>
+    **Jawaban :**
     ``
     Pada class tersebut terdapat 4 method, yaitu tampilInformasi(), terjual(), restock(), gantiHarga()
     ``
 
-4. Perhatikan method terjual() yang terdapat di dalam class Buku. Modifikasi isi method tersebut sehingga proses pengurangan hanya dapat dilakukan jika stok masih ada (lebih besar dari 0)!
-
+4. Perhatikan method terjual() yang terdapat di dalam class Buku. Modifikasi isi method tersebut sehingga proses pengurangan hanya dapat dilakukan jika stok masih ada (lebih besar dari 0)! <br>
+    **Jawaban :**
     ```java
     void terjual(int jml) {
         if(stok > jml) {
@@ -75,8 +79,8 @@ Buku? Sebutkan apa saja atributnya! <br>
     }
     ```
 
-5. Menurut Anda, mengapa method restock() mempunyai satu parameter berupa bilangan int?
-
+5. Menurut Anda, mengapa method restock() mempunyai satu parameter berupa bilangan int? <br>
+    **Jawaban :**
     ``
     Method restock() memiliki 1 paramater karena hanya membutuhkan jumlah buku yang ingin di restock
     ``
@@ -109,8 +113,8 @@ public class BukuMain04 {
 ![Hasil](./docs/2.2.2.png)
 
 ### **2.2.3 Pertanyaan**
-1. Pada class BukuMain, tunjukkan baris kode program yang digunakan untuk proses instansiasi! Apa nama object yang dihasilkan?
-
+1. Pada class BukuMain, tunjukkan baris kode program yang digunakan untuk proses instansiasi! Apa nama object yang dihasilkan? <br>
+    **Jawaban :**
     ``
     Nama object yang dihasilkan adalah bk1
     ``
@@ -118,14 +122,14 @@ public class BukuMain04 {
     Buku04 bk1 = new Buku04();
     ```
 
-2. Bagaimana cara mengakses atribut dan method dari suatu objek?
-
+2. Bagaimana cara mengakses atribut dan method dari suatu objek? <br>
+    **Jawaban :**
     ``
     Untuk mengakses atribut dan method daru suatu objek, maka kita perlu memasukkan nama object, dilanjutkan dengan tanda . (titik), kemudian memasukkan nama atribut atau method 
     ``
 
-3. Mengapa hasil output pemanggilan method tampilInformasi() pertama dan kedua berbeda?
-
+3. Mengapa hasil output pemanggilan method tampilInformasi() pertama dan kedua berbeda? <br>
+    **Jawaban :**
     ``
     Karena informasi pertama dan kedua dari objek yang berbeda
     ``
@@ -180,8 +184,8 @@ public class Buku04 {
 
 ### **2.3.3 Pertanyaan**
 
-1. Pada class Buku di Percobaan 3, tunjukkan baris kode program yang digunakan untuk mendeklarasikan konstruktor berparameter!
-
+1. Pada class Buku di Percobaan 3, tunjukkan baris kode program yang digunakan untuk mendeklarasikan konstruktor berparameter! <br>
+    **Jawaban :**
     ```java
     public Buku04(String jud, String pg, int hal, int stok, int har) {
         judul = jud;
@@ -192,36 +196,36 @@ public class Buku04 {
     }
     ```
 
-2. Perhatikan class BukuMain. Apa sebenarnya yang dilakukan pada baris program berikut?
-
+2. Perhatikan class BukuMain. Apa sebenarnya yang dilakukan pada baris program berikut? <br>
+    **Jawaban :**
     ``
     Baris kode tersebut melakukan instansiasi berparameter
     ``
 
-3. Hapus konstruktor default pada class Buku, kemudian compile dan run program. Bagaimana hasilnya? Jelaskan mengapa hasilnya demikian!
-
+3. Hapus konstruktor default pada class Buku, kemudian compile dan run program. Bagaimana hasilnya? Jelaskan mengapa hasilnya demikian!  <br>
+    **Jawaban :**
     ``
     Muncul peringatan "The constructor Buku04() is undefined", hal ini dikarenakan pada BukuMain04.java terdapat 2 instansiasi, yang pertama tidak terdapat paramater, yang kedua membutuhkan parameter, sehingga konstruktor nya pun juga berbeda
     ``
     
-4. Setelah melakukan instansiasi object, apakah method di dalam class Buku harus diakses secara berurutan? Jelaskan alasannya!
-
+4. Setelah melakukan instansiasi object, apakah method di dalam class Buku harus diakses secara berurutan? Jelaskan alasannya! <br>
+    **Jawaban :** 
     ``
     Setelah melakukan instansiasi objek, method tidak perlu diakses secara berurutan, setiap method bersifat independen, tidak bergantung pada urutan pemanggilan
     ``
 
-5. Buat object baru dengan nama buku<NamaMahasiswa> menggunakan konstruktor berparameter dari class Buku!
-
+5. Buat object baru dengan nama buku<NamaMahasiswa> menggunakan konstruktor berparameter dari class Buku! <br>
+    **Jawaban :**
     ```java
     Buku04 BukuNaufal = new Buku04("Tips Gacha Wangy", "Ahmad Naufal Waskito Aji", 1250, 5, 175000);
     BukuNaufal.tampilInformasi();
     ```
 
-6. Commit dan push kode program ke Github
-
 
 ## 2.4 Latihan Praktikum
-1. Pada class Buku yang telah dibuat, tambahkan tiga method yaitu hitungHargaTotal(),
+
+### 2.4.1 Latihan 1
+Pada class Buku yang telah dibuat, tambahkan tiga method yaitu hitungHargaTotal(),
 hitungDiskon(), dan hitungHargaBayar() dengan penjelasan sebagai berikut: <br>
 - Method hitungHargaTotal() digunakan untuk menghitung harga total yang merupakan perkalian antara harga dengan jumlah buku yang terjual <br>
 - Method hitungDiskon() digunakan untuk menghitung diskon dengan aturan berikut: <br>
@@ -300,7 +304,9 @@ hitungDiskon(), dan hitungHargaBayar() dengan penjelasan sebagai berikut: <br>
 
     ![Hasil](./docs/2.4.1.png)
 
-2. Buat program berdasarkan class diagram berikut ini!
+
+### 2.4.2 Latihan 2
+Buat program berdasarkan class diagram berikut ini!
 Penjelasan dari atribut dan method pada class Dragon tersebut adalah sebagai berikut:
 - Atribut x digunakan untuk menyimpan posisi koordinat x (mendatar) dari dragon, sedangkan atribut y untuk posisi koordinat y (vertikal)
 - Atribut width digunakan untuk menyimpan lebar dari area permainan, sedangkan height untuk menyimpan panjang area
