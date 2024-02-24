@@ -1,16 +1,19 @@
 # <p align="center">JOBSHEET II - OBJECT</p>
 
-![Hasil](./docs/LogoPolinema.png)
+<br><br>
 
 <p align="center">
     <img src="./docs/LogoPolinema.png" alt="Your Image Description">
 </p>
 
-**IDENTITAS MAHASISWA**
+<br><br>
 
-Nama : Ahmad Naufal Waskito Aji <br>
-NIM : 2341720080 <br>
-Kelas : TI-1B
+<p align="center">
+    Nama : Ahmad Naufal Waskito Aji <br>
+    NIM : 2341720080 <br>
+    Kelas : TI-1B <br>
+    Prodi : D4 Teknik Informatika
+</p>
 
 ***
 
