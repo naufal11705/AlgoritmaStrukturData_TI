@@ -50,7 +50,7 @@ public class Buku04 {
 
 ### **1.2 Verifikasi Hasil Percobaan**
 
-![Hasil](./docs/2.1.2.png)
+![Hasil](./docs/1.2.png)
 
 ### **1.3 Pertanyaan**
 1. Sebutkan dua karakteristik class atau object! <br>
@@ -113,7 +113,7 @@ public class BukuMain04 {
 
 ### **2.2 Verifikasi Hasil Percobaan**
 
-![Hasil](./docs/2.2.2.png)
+![Hasil](./docs/2.2.png)
 
 ### **2.3 Pertanyaan**
 1. Pada class BukuMain, tunjukkan baris kode program yang digunakan untuk proses instansiasi! Apa nama object yang dihasilkan? <br>
@@ -183,7 +183,7 @@ public class Buku04 {
 
 ### **3.2 Verifikasi Hasil Percobaan**
 
-![Hasil](./docs/2.3.2.png)
+![Hasil](./docs/3.2.png)
 
 ### **3.3 Pertanyaan**
 
@@ -305,7 +305,7 @@ hitungDiskon(), dan hitungHargaBayar() dengan penjelasan sebagai berikut: <br>
 
     **Hasil Percobaan**
 
-    ![Hasil](./docs/2.4.1.png)
+    ![Hasil](./docs/4.1.png)
 
 
 ### 4.2 Latihan 2
@@ -394,4 +394,4 @@ Penjelasan dari atribut dan method pada class Dragon tersebut adalah sebagai ber
 
     **Hasil Percobaan**
 
-    ![Hasil](./docs/2.4.2.png)
+    ![Hasil](./docs/4.2.png)
