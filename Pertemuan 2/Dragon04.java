@@ -34,8 +34,8 @@ public class Dragon04 {
     }
 
     void moveDown() {
-        if (x < height) {
-            x += 1;
+        if (y < height) {
+            y += 1;
         } else {
             detectCollision(x, y);
         }
