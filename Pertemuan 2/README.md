@@ -294,7 +294,7 @@ hitungDiskon(), dan hitungHargaBayar() dengan penjelasan sebagai berikut: <br>
             } else if (hitungHargaTotal() >= 75000 && hitungHargaTotal() <= 150000) {
                 return hitungHargaTotal() * 5 / 100;
             } else {
-                return hitungHargaTotal();
+                return 0;
             }
         }
 
