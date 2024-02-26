@@ -15,7 +15,9 @@ public class Buku04 {
         if(stok > jml) {
             stok -= jml;
             terjual = jml;
-            System.out.println("Total Bayar: " + hitungHargaBayar());
+            System.out.println("Total : " + hitungHargaTotal());
+            System.out.println("Total Diskon : " + hitungDiskon());
+            System.out.println("Total Bayar : " + hitungHargaBayar());
         }   
     }
 
@@ -56,8 +58,4 @@ public class Buku04 {
     int hitungHargaBayar() {
         return hitungHargaTotal() - hitungDiskon();
     }
-
-
-
-
 }
