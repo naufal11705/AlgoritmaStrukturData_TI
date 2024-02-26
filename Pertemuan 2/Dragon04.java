@@ -2,6 +2,13 @@ public class Dragon04 {
 
     int x, y, width, height;
 
+    public Dragon04(int height, int width, int x, int y) {
+        this.height = height;
+        this.width = width;
+        this.x = x;
+        this.y = y; 
+    }
+
     void moveLeft() {
         if (x > 0) {
             x -= 1;
