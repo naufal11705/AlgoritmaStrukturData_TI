@@ -56,20 +56,20 @@ public class Buku04 {
 1. Sebutkan dua karakteristik class atau object! <br>
     **Jawaban :**
     ``
-    Karakteristik class atau object adalah "Mempunyai Sesuatu" dan "Melakukan Sesuatu"
+    Karakteristik class atau object adalah "Mempunyai Sesuatu" (Data, Properti, Variabel, State, Atribut) dan "Melakukan Sesuatu" (Tingkah laku, Behaviour, Fungsi, Method)
     ``
 
 2. Perhatikan class Buku pada Praktikum 1 tersebut, ada berapa atribut yang dimiliki oleh class
 Buku? Sebutkan apa saja atributnya! <br>
     **Jawaban :**
     ``
-    Pada praktikum 1 terdapat 5 atribut, yaitu judul, pengarang, halaman, stok, harga
+    Pada praktikum 1 terdapat 5 atribut, yaitu judul, pengarang, halaman, stok, dan harga
     ``
         
 3. Ada berapa method yang dimiliki oleh class tersebut? Sebutkan apa saja methodnya! <br>
     **Jawaban :**
     ``
-    Pada class tersebut terdapat 4 method, yaitu tampilInformasi(), terjual(), restock(), gantiHarga()
+    Pada class tersebut terdapat 4 method, yaitu tampilInformasi(), terjual(int jml), restock(int jml), dan gantiHarga(int hrg)
     ``
 
 4. Perhatikan method terjual() yang terdapat di dalam class Buku. Modifikasi isi method tersebut sehingga proses pengurangan hanya dapat dilakukan jika stok masih ada (lebih besar dari 0)! <br>
@@ -85,7 +85,7 @@ Buku? Sebutkan apa saja atributnya! <br>
 5. Menurut Anda, mengapa method restock() mempunyai satu parameter berupa bilangan int? <br>
     **Jawaban :**
     ``
-    Method restock() memiliki 1 paramater karena hanya membutuhkan jumlah buku yang ingin di restock
+    Method restock() memiliki 1 paramater berupa bilangan integer karena untuk mewakili jumlah barang yang akan ditambahkan ke dalam stok
     ``
 
 
@@ -128,15 +128,18 @@ public class BukuMain04 {
 2. Bagaimana cara mengakses atribut dan method dari suatu objek? <br>
     **Jawaban :**
     ``
-    Untuk mengakses atribut dan method daru suatu objek, maka kita perlu memasukkan nama object, dilanjutkan dengan tanda . (titik), kemudian memasukkan nama atribut atau method 
+    Untuk mengakses atribut dapat dilakukan dengan "namaobject.atribut" sedangkan untuk mengakses method daru suatu objek dapat dilakukan dengan "namaobject.method"
     ``
 
 3. Mengapa hasil output pemanggilan method tampilInformasi() pertama dan kedua berbeda? <br>
     **Jawaban :**
     ``
-    Karena informasi pertama dan kedua dari objek yang berbeda
+    Karena stok dan harga object tersebut telah mengalami perubahan pada method :
     ``
-
+    ```java
+    bk1.terjual(5);
+    bk1.gantiHarga(60000);
+    ```
 
 ## Percobaan 3: Membuat Konstruktor
 ### **3.1 Kode Percobaan**
@@ -255,7 +258,9 @@ hitungDiskon(), dan hitungHargaBayar() dengan penjelasan sebagai berikut: <br>
             if(stok > jml) {
                 stok -= jml;
                 terjual = jml;
-                System.out.println("Total Bayar: " + hitungHargaBayar());
+                System.out.println("Total : " + hitungHargaTotal());
+                System.out.println("Total Diskon : " + hitungDiskon());
+                System.out.println("Total Bayar : " + hitungHargaBayar());
             }   
         }
 
@@ -296,10 +301,6 @@ hitungDiskon(), dan hitungHargaBayar() dengan penjelasan sebagai berikut: <br>
         int hitungHargaBayar() {
             return hitungHargaTotal() - hitungDiskon();
         }
-
-
-
-
     }
     ```
 
@@ -323,6 +324,13 @@ Penjelasan dari atribut dan method pada class Dragon tersebut adalah sebagai ber
     public class Dragon04 {
 
         int x, y, width, height;
+
+        public Dragon04(int height, int width, int x, int y) {
+            this.height = height;
+            this.width = width;
+            this.x = x;
+            this.y = y; 
+        }
 
         void moveLeft() {
             if (x > 0) {
@@ -349,8 +357,8 @@ Penjelasan dari atribut dan method pada class Dragon tersebut adalah sebagai ber
         }
 
         void moveDown() {
-            if (x < height) {
-                x += 1;
+            if (y < height) {
+                y += 1;
             } else {
                 detectCollision(x, y);
             }
@@ -373,23 +381,34 @@ Penjelasan dari atribut dan method pada class Dragon tersebut adalah sebagai ber
     public class DragonMain04 {
         public static void main(String[] args) {
         
-            Dragon04 dg1 = new Dragon04();
-            dg1.height = 20;
-            dg1.width = 20;
-            dg1.x = 10;
-            dg1.y = 15;
+            Dragon04 dg1 = new Dragon04(20, 20, 10, 15);
 
-            dg1.printPosition();
-
-            for (int i = 0; i<20; i++) {
+            System.out.println("\nThe dragon moves to the right.");
+            for (int i = 0; i < 4; i++) {
                 dg1.moveRight();
+                dg1.printPosition();
+            }
+
+            System.out.println("\nThe dragon moves upward.");
+            for (int i = 0; i < 2; i++) {
                 dg1.moveUp();
+                dg1.printPosition();
+            }
+
+            System.out.println("\nThe dragon moves to the left.");
+            for (int i = 0; i < 3; i++) {
+                dg1.moveLeft();
+                dg1.printPosition();
+            }
+
+            System.out.println("\nThe dragon moves to the downward.");
+            for (int i = 0; i < 10; i++) {
+                dg1.moveDown();
                 dg1.printPosition();
             }
 
         }
     }
-
     ```
 
     **Hasil Percobaan**
