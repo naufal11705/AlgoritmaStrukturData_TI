@@ -3,19 +3,19 @@ import java.util.Scanner;
 public class Pemilihan {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc04 = new Scanner(System.in);
         System.out.println("Program Menghitung Nilai Akhir");
         
         System.out.println("========================");
         
         System.out.print("Masukkan Nilai Tugas: ");
-        double NilaiTugas = sc.nextDouble();
+        double NilaiTugas = sc04.nextDouble();
         System.out.print("Masukkan Nilai Kuis: ");
-        double NilaiKuis = sc.nextDouble();
+        double NilaiKuis = sc04.nextDouble();
         System.out.print("Masukkan Nilai UTS: ");
-        double NilaiUTS = sc.nextDouble();
+        double NilaiUTS = sc04.nextDouble();
         System.out.print("Masukkan Nilai UAS: ");
-        double NilaiUAS = sc.nextDouble();
+        double NilaiUAS = sc04.nextDouble();
 
         System.out.println("========================");
         System.out.println("========================");
@@ -59,6 +59,8 @@ public class Pemilihan {
                 Keterangan = "TIDAK LULUS";
             }
             System.out.println(Keterangan);
+            
+            sc04.close();
         }
     }
 }

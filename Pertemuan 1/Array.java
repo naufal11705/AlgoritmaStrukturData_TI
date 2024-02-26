@@ -46,62 +46,63 @@ public class Array {
 
         } while (konfirmasi.equalsIgnoreCase("y"));
             
-            for(int i=0; i<MataKuliah.length; i++) {
-                if(MataKuliah[i][0] != null) {
-                    JumlahSKS += Integer.parseInt(MataKuliah[i][2]);
-                } else {
-                    break;
-                }
+        for(int i=0; i<MataKuliah.length; i++) {
+            if(MataKuliah[i][0] != null) {
+                JumlahSKS += Integer.parseInt(MataKuliah[i][2]);
+            } else {
+                break;
+            }
+        }
+
+        for(int i=0; i<MataKuliah.length; i++) {
+            if(MataKuliah[i][0] != null) {
+                NilaiAngka = MataKuliah[i][1].equalsIgnoreCase("A") ? 4.0
+                : MataKuliah[i][1].equalsIgnoreCase("B+") ? 3.5
+                : MataKuliah[i][1].equalsIgnoreCase("B") ? 3.0
+                : MataKuliah[i][1].equalsIgnoreCase("C+") ? 2.5
+                : MataKuliah[i][1].equalsIgnoreCase("C") ? 2.0
+                : MataKuliah[i][1].equalsIgnoreCase("D") ? 1.0
+                : 0.0;
+
+                IP += ((NilaiAngka * Integer.parseInt(MataKuliah[i][2])) / JumlahSKS);
+            }
+        }
+
+        System.out.println("==============================");
+        System.out.println("Hasil Konversi Nilai");
+        System.out.println("==============================");
+
+        System.out.println(String.format("%-40s %-12s %-12s",
+        "MK",
+        "Nilai Huruf",
+        "Bobot Nilai"
+        ));
+
+        for(int i=0; i<MataKuliah.length; i++) {
+
+            if(MataKuliah[i][0] != null) {
+
+                NilaiAngka = MataKuliah[i][1].equalsIgnoreCase("A") ? 4.0
+                : MataKuliah[i][1].equalsIgnoreCase("B+") ? 3.5
+                : MataKuliah[i][1].equalsIgnoreCase("B") ? 3.0
+                : MataKuliah[i][1].equalsIgnoreCase("C+") ? 2.5
+                : MataKuliah[i][1].equalsIgnoreCase("C") ? 2.0
+                : MataKuliah[i][1].equalsIgnoreCase("D") ? 1.0
+                : 0.0;
+    
+                System.out.println(String.format("%-40s %-12s %-12s",
+                MataKuliah[i][0],
+                MataKuliah[i][1],
+                NilaiAngka
+                ));
+
             }
 
-            for(int i=0; i<MataKuliah.length; i++) {
-                if(MataKuliah[i][0] != null) {
-                    NilaiAngka = MataKuliah[i][1].equalsIgnoreCase("A") ? 4.0
-                    : MataKuliah[i][1].equalsIgnoreCase("B+") ? 3.5
-                    : MataKuliah[i][1].equalsIgnoreCase("B") ? 3.0
-                    : MataKuliah[i][1].equalsIgnoreCase("C+") ? 2.5
-                    : MataKuliah[i][1].equalsIgnoreCase("C") ? 2.0
-                    : MataKuliah[i][1].equalsIgnoreCase("D") ? 1.0
-                    : 0.0;
+        }
 
-                    IP += ((NilaiAngka * Integer.parseInt(MataKuliah[i][2])) / JumlahSKS);
-                }
-            }
+        System.out.println("==============================");
+        System.out.println("IP: " + (df.format(IP)));
 
-            System.out.println("==============================");
-            System.out.println("Hasil Konversi Nilai");
-            System.out.println("==============================");
-    
-            System.out.println(String.format("%-40s %-12s %-12s",
-            "MK",
-            "Nilai Huruf",
-            "Bobot Nilai"
-            ));
-    
-            for(int i=0; i<MataKuliah.length; i++) {
-
-                if(MataKuliah[i][0] != null) {
-
-                    NilaiAngka = MataKuliah[i][1].equalsIgnoreCase("A") ? 4.0
-                    : MataKuliah[i][1].equalsIgnoreCase("B+") ? 3.5
-                    : MataKuliah[i][1].equalsIgnoreCase("B") ? 3.0
-                    : MataKuliah[i][1].equalsIgnoreCase("C+") ? 2.5
-                    : MataKuliah[i][1].equalsIgnoreCase("C") ? 2.0
-                    : MataKuliah[i][1].equalsIgnoreCase("D") ? 1.0
-                    : 0.0;
-        
-                    System.out.println(String.format("%-40s %-12s %-12s",
-                    MataKuliah[i][0],
-                    MataKuliah[i][1],
-                    NilaiAngka
-                    ));
-
-                }
-    
-            }
-
-            System.out.println("==============================");
-            System.out.println("IP: " + (df.format(IP)));
-
+        sc04.close();
     }
 }

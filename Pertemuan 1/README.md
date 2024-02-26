@@ -25,19 +25,19 @@ import java.util.Scanner;
 public class Pemilihan {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc04 = new Scanner(System.in);
         System.out.println("Program Menghitung Nilai Akhir");
         
         System.out.println("========================");
         
         System.out.print("Masukkan Nilai Tugas: ");
-        double NilaiTugas = sc.nextDouble();
+        double NilaiTugas = sc04.nextDouble();
         System.out.print("Masukkan Nilai Kuis: ");
-        double NilaiKuis = sc.nextDouble();
+        double NilaiKuis = sc04.nextDouble();
         System.out.print("Masukkan Nilai UTS: ");
-        double NilaiUTS = sc.nextDouble();
+        double NilaiUTS = sc04.nextDouble();
         System.out.print("Masukkan Nilai UAS: ");
-        double NilaiUAS = sc.nextDouble();
+        double NilaiUAS = sc04.nextDouble();
 
         System.out.println("========================");
         System.out.println("========================");
@@ -81,6 +81,8 @@ public class Pemilihan {
                 Keterangan = "TIDAK LULUS";
             }
             System.out.println(Keterangan);
+            
+            sc04.close();
         }
     }
 }
@@ -103,10 +105,10 @@ import java.util.Scanner;
 public class Perulangan {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner sc04 = new Scanner(System.in);
 
         System.out.print("Masukkan NIM: ");
-        String NIM = sc.next();
+        String NIM = sc04.next();
 
         int n = Integer.parseInt(NIM.substring(NIM.length() - 2));
 
@@ -125,6 +127,8 @@ public class Perulangan {
                 System.out.print("* ");
             }
         }
+
+        sc04.close();
 
     }
 }
@@ -190,66 +194,66 @@ public class Array {
 
         } while (konfirmasi.equalsIgnoreCase("y"));
             
-            for(int i=0; i<MataKuliah.length; i++) {
-                if(MataKuliah[i][0] != null) {
-                    JumlahSKS += Integer.parseInt(MataKuliah[i][2]);
-                } else {
-                    break;
-                }
+        for(int i=0; i<MataKuliah.length; i++) {
+            if(MataKuliah[i][0] != null) {
+                JumlahSKS += Integer.parseInt(MataKuliah[i][2]);
+            } else {
+                break;
+            }
+        }
+
+        for(int i=0; i<MataKuliah.length; i++) {
+            if(MataKuliah[i][0] != null) {
+                NilaiAngka = MataKuliah[i][1].equalsIgnoreCase("A") ? 4.0
+                : MataKuliah[i][1].equalsIgnoreCase("B+") ? 3.5
+                : MataKuliah[i][1].equalsIgnoreCase("B") ? 3.0
+                : MataKuliah[i][1].equalsIgnoreCase("C+") ? 2.5
+                : MataKuliah[i][1].equalsIgnoreCase("C") ? 2.0
+                : MataKuliah[i][1].equalsIgnoreCase("D") ? 1.0
+                : 0.0;
+
+                IP += ((NilaiAngka * Integer.parseInt(MataKuliah[i][2])) / JumlahSKS);
+            }
+        }
+
+        System.out.println("==============================");
+        System.out.println("Hasil Konversi Nilai");
+        System.out.println("==============================");
+
+        System.out.println(String.format("%-40s %-12s %-12s",
+        "MK",
+        "Nilai Huruf",
+        "Bobot Nilai"
+        ));
+
+        for(int i=0; i<MataKuliah.length; i++) {
+
+            if(MataKuliah[i][0] != null) {
+
+                NilaiAngka = MataKuliah[i][1].equalsIgnoreCase("A") ? 4.0
+                : MataKuliah[i][1].equalsIgnoreCase("B+") ? 3.5
+                : MataKuliah[i][1].equalsIgnoreCase("B") ? 3.0
+                : MataKuliah[i][1].equalsIgnoreCase("C+") ? 2.5
+                : MataKuliah[i][1].equalsIgnoreCase("C") ? 2.0
+                : MataKuliah[i][1].equalsIgnoreCase("D") ? 1.0
+                : 0.0;
+    
+                System.out.println(String.format("%-40s %-12s %-12s",
+                MataKuliah[i][0],
+                MataKuliah[i][1],
+                NilaiAngka
+                ));
+
             }
 
-            for(int i=0; i<MataKuliah.length; i++) {
-                if(MataKuliah[i][0] != null) {
-                    NilaiAngka = MataKuliah[i][1].equalsIgnoreCase("A") ? 4.0
-                    : MataKuliah[i][1].equalsIgnoreCase("B+") ? 3.5
-                    : MataKuliah[i][1].equalsIgnoreCase("B") ? 3.0
-                    : MataKuliah[i][1].equalsIgnoreCase("C+") ? 2.5
-                    : MataKuliah[i][1].equalsIgnoreCase("C") ? 2.0
-                    : MataKuliah[i][1].equalsIgnoreCase("D") ? 1.0
-                    : 0.0;
+        }
 
-                    IP += ((NilaiAngka * Integer.parseInt(MataKuliah[i][2])) / JumlahSKS);
-                }
-            }
+        System.out.println("==============================");
+        System.out.println("IP: " + (df.format(IP)));
 
-            System.out.println("==============================");
-            System.out.println("Hasil Konversi Nilai");
-            System.out.println("==============================");
-    
-            System.out.println(String.format("%-40s %-12s %-12s",
-            "MK",
-            "Nilai Huruf",
-            "Bobot Nilai"
-            ));
-    
-            for(int i=0; i<MataKuliah.length; i++) {
-
-                if(MataKuliah[i][0] != null) {
-
-                    NilaiAngka = MataKuliah[i][1].equalsIgnoreCase("A") ? 4.0
-                    : MataKuliah[i][1].equalsIgnoreCase("B+") ? 3.5
-                    : MataKuliah[i][1].equalsIgnoreCase("B") ? 3.0
-                    : MataKuliah[i][1].equalsIgnoreCase("C+") ? 2.5
-                    : MataKuliah[i][1].equalsIgnoreCase("C") ? 2.0
-                    : MataKuliah[i][1].equalsIgnoreCase("D") ? 1.0
-                    : 0.0;
-        
-                    System.out.println(String.format("%-40s %-12s %-12s",
-                    MataKuliah[i][0],
-                    MataKuliah[i][1],
-                    NilaiAngka
-                    ));
-
-                }
-    
-            }
-
-            System.out.println("==============================");
-            System.out.println("IP: " + (df.format(IP)));
-
+        sc04.close();
     }
 }
-
 ```
 
 ### **3.2 Hasil Percobaan**
@@ -354,98 +358,20 @@ public class Tugas1 {
 
         Scanner sc04 = new Scanner(System.in);
 
-        char[] KODE = new char[10];
-        char[][] KOTA = new char[10][12];
+        char[] KODE = {'A', 'B', 'D', 'E', 'F', 'G', 'H', 'L', 'N', 'T'};
 
-        KODE[0] = 'A';
-        KODE[1] = 'B';
-        KODE[2] = 'D';
-        KODE[3] = 'E';
-        KODE[4] = 'F';
-        KODE[5] = 'G';
-        KODE[6] = 'H';
-        KODE[7] = 'L';
-        KODE[8] = 'N';
-        KODE[9] = 'T';
-
-        KOTA[0][0] = 'B';
-        KOTA[0][1] = 'A';
-        KOTA[0][2] = 'N';
-        KOTA[0][3] = 'T';
-        KOTA[0][4] = 'E';
-        KOTA[0][5] = 'N';
-
-        KOTA[1][0] = 'J';
-        KOTA[1][1] = 'A';
-        KOTA[1][2] = 'K';
-        KOTA[1][3] = 'A';
-        KOTA[1][4] = 'R';
-        KOTA[1][5] = 'T';
-        KOTA[1][6] = 'A';
-
-        KOTA[2][0] = 'B';
-        KOTA[2][1] = 'A';
-        KOTA[2][2] = 'N';
-        KOTA[2][3] = 'D';
-        KOTA[2][4] = 'U';
-        KOTA[2][5] = 'N';
-        KOTA[2][6] = 'G';
-
-        KOTA[3][0] = 'C';
-        KOTA[3][1] = 'I';
-        KOTA[3][2] = 'R';
-        KOTA[3][3] = 'E';
-        KOTA[3][4] = 'B';
-        KOTA[3][5] = 'O';
-        KOTA[3][6] = 'N';
-
-        KOTA[4][0] = 'B';
-        KOTA[4][1] = 'O';
-        KOTA[4][2] = 'G';
-        KOTA[4][3] = 'O';
-        KOTA[4][4] = 'R';
-        
-        KOTA[5][0] = 'P';
-        KOTA[5][1] = 'E';
-        KOTA[5][2] = 'K';
-        KOTA[5][3] = 'A';
-        KOTA[5][4] = 'L';
-        KOTA[5][5] = 'O';
-        KOTA[5][6] = 'N';
-        KOTA[5][7] = 'G';
-        KOTA[5][8] = 'A';
-        KOTA[5][9] = 'N';
-
-        KOTA[6][0] = 'S';
-        KOTA[6][1] = 'E';
-        KOTA[6][2] = 'M';
-        KOTA[6][3] = 'A';
-        KOTA[6][4] = 'R';
-        KOTA[6][5] = 'A';
-        KOTA[6][6] = 'N';
-        KOTA[6][7] = 'G';
-
-        KOTA[7][0] = 'S';
-        KOTA[7][1] = 'U';
-        KOTA[7][2] = 'R';
-        KOTA[7][3] = 'A';
-        KOTA[7][4] = 'B';
-        KOTA[7][5] = 'A';
-        KOTA[7][6] = 'Y';
-        KOTA[7][7] = 'A';        
-
-        KOTA[8][0] = 'M';
-        KOTA[8][1] = 'A';
-        KOTA[8][2] = 'L';
-        KOTA[8][3] = 'A';
-        KOTA[8][4] = 'N';
-        KOTA[8][5] = 'G';
-
-        KOTA[9][0] = 'T';
-        KOTA[9][1] = 'E';
-        KOTA[9][2] = 'G';
-        KOTA[9][3] = 'A';
-        KOTA[9][4] = 'L';
+        char[][] KOTA = {
+                {'B', 'A', 'N', 'T', 'E', 'N'},
+                {'J', 'A', 'K', 'A', 'R', 'T', 'A'},
+                {'B', 'A', 'N', 'D', 'U', 'N', 'G'},
+                {'C', 'I', 'R', 'E', 'B', 'O', 'N'},
+                {'B', 'O', 'G', 'O', 'R'},
+                {'P', 'E', 'K', 'A', 'L', 'O', 'N', 'G', 'A', 'N'},
+                {'S', 'E', 'M', 'A', 'R', 'A', 'N', 'G'},
+                {'S', 'U', 'R', 'A', 'B', 'A', 'Y', 'A'},
+                {'M', 'A', 'L', 'A', 'N', 'G'},
+                {'T', 'E', 'G', 'A', 'L'}
+        };
 
         System.out.print("Masukkan kode plat nomor : ");
         char plat = sc04.next().toUpperCase().charAt(0);
@@ -458,9 +384,10 @@ public class Tugas1 {
             }
         }
 
+        sc04.close();
+
     }
 }
-
 ```
 
 #### **5.1.3 Hasil Percobaan**
