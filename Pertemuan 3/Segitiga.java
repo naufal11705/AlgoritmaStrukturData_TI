@@ -10,12 +10,12 @@ public class Segitiga {
         tinggi = t;
     }
 
-    public int hitungLuas() {
-        return (int)(0.5 * alas * tinggi);
+    public double hitungLuas() {
+        return 0.5 * alas * tinggi;
     }
 
-    public int hitungKeliling() {
-        return alas + tinggi + (int)Math.sqrt(alas*alas + tinggi*tinggi);
+    public double hitungKeliling() {
+        return alas + tinggi + Math.sqrt(alas*alas + tinggi*tinggi);
     }
     
 }
