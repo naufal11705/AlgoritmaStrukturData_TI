@@ -377,3 +377,37 @@ public class Latihan2 {
 
 ### 4.3 Latihan 3
 Modifikasi program Latihan no.2 di atas, sehingga bisa digunakan untuk menghitung rata-rata IPK, serta menampilkan data mahasiswa dengan IPK terbesar! (gunakan method untuk masing-masing proses tersebut)
+
+```java
+    double HitungRataIPK(Mahasiswa[] mhsArr) {
+        double totalIpk = 0;
+
+        for (Mahasiswa mhs : mhsArr) {
+            totalIpk += mhs.ipk;
+        }
+
+        return totalIpk / mhsArr.length;
+    }
+
+    void TampilMhsIpkTertinggi(Mahasiswa[] mhsArr) {
+        double ipkTertinggi = 0;
+        Mahasiswa mhsIpkTertinggi = null;
+
+        for (Mahasiswa mhs : mhsArr) {
+            if (mhs.ipk > ipkTertinggi) {
+                ipkTertinggi = mhs.ipk;
+                mhsIpkTertinggi = mhs;
+            }
+        }
+
+        System.out.println("\nData Mahasiswa dengan IPK Tertinggi:");
+        System.out.println("Nama: " + mhsIpkTertinggi.nama);
+        System.out.println("NIM: " + mhsIpkTertinggi.nim);
+        System.out.println("Jenis Kelamin: " + mhsIpkTertinggi.kelamin);
+        System.out.println("Nilai IPK: " + mhsIpkTertinggi.ipk);
+    }
+```
+
+``Hasil Percobaan``
+
+![Hasil](./docs/4.3.png)
