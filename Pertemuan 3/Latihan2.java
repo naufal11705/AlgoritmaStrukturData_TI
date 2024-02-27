@@ -30,6 +30,9 @@ public class Latihan2 {
             System.out.println("Nilai IPK: " + mhsArray[i].ipk);
         }
 
+        Mahasiswa mhs = new Mahasiswa();
+        System.out.println(mhs.HitungRataIPK(mhsArray));
+
         sc04.close();
 
     }

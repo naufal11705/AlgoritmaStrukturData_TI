@@ -8,4 +8,14 @@ public class Mahasiswa {
         
     }
 
+    double HitungRataIPK(Mahasiswa[] mhsArr) {
+        double totalIpk = 0;
+
+        for (Mahasiswa mhs : mhsArr) {
+            totalIpk += mhs.ipk;
+        }
+
+        return totalIpk / mhsArr.length;
+    }
+
 }
