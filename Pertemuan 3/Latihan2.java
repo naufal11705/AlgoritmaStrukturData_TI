@@ -1,11 +1,17 @@
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Latihan2 {
     public static void main(String[] args) {
         Scanner sc04 = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("#.##");
 
         System.out.print("Masukkan Jumlah Mahasiswa: ");
         Mahasiswa[] mhsArray = new Mahasiswa[sc04.nextInt()];
+
+        System.out.println("\n═══════════════════════════════");
+        System.out.println("Input Data Mahasiswa");
+        System.out.println("═══════════════════════════════");
 
         for(int i=0; i<mhsArray.length; i++) {
 
@@ -22,6 +28,10 @@ public class Latihan2 {
     
         }
 
+        System.out.println("\n═══════════════════════════════");
+        System.out.println("Data Mahasiswa");
+        System.out.println("═══════════════════════════════");
+
         for(int i=0; i<mhsArray.length; i++) {
             System.out.println("\nData Mahasiswa ke-" + (i+1));
             System.out.println("Nama: " + mhsArray[i].nama);
@@ -31,7 +41,11 @@ public class Latihan2 {
         }
 
         Mahasiswa mhs = new Mahasiswa();
-        System.out.println(mhs.HitungRataIPK(mhsArray));
+        System.out.println("\n═══════════════════════════════");
+        System.out.println("Rata-rata IPK: " + df.format(mhs.HitungRataIPK(mhsArray)));
+        System.out.println("═══════════════════════════════");
+        mhs.TampilMhsIpkTertinggi(mhsArray);
+        System.out.println("═══════════════════════════════");
 
         sc04.close();
 
