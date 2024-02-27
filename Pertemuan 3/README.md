@@ -312,7 +312,68 @@ tinggi limas
 d. Pada bola, inpuntan untuk atribut hanya jari-jari
 
 ### 4.2 Latihan 2
-Sebuah kampus membutuhkan program untuk menampilkan informasi mahasiswa berupa nama, nim, jenis kelamin dan juga IPK mahasiswa.  Program dapat menerima input semua informasi tersebut, kemudian menampilkanya kembali ke user. Implementasikan program tersebut jika  dimisalkan terdapat 3 data mahasiswa yang tersedia. Contoh output program:
+Sebuah kampus membutuhkan program untuk menampilkan informasi mahasiswa berupa nama, nim, jenis kelamin dan juga IPK mahasiswa.  Program dapat menerima input semua informasi tersebut, kemudian menampilkanya kembali ke user. Implementasikan program tersebut jika  dimisalkan terdapat 3 data mahasiswa yang tersedia.
+
+``Class Mahasiswa``
+```java
+public class Mahasiswa {
+
+    String nama, nim;
+    char kelamin;
+    double ipk;
+
+    public Mahasiswa() {
+        
+    }
+
+}
+```
+
+``Main Latihan2.java``
+```java
+import java.util.Scanner;
+
+public class Latihan2 {
+    public static void main(String[] args) {
+        Scanner sc04 = new Scanner(System.in);
+
+        System.out.print("Masukkan Jumlah Mahasiswa: ");
+        Mahasiswa[] mhsArray = new Mahasiswa[sc04.nextInt()];
+
+        for(int i=0; i<mhsArray.length; i++) {
+
+            System.out.println("\nMasukkan Data Mahasiswa ke-" + (i+1));
+            mhsArray[i] = new Mahasiswa();
+            System.out.print("Masukkan Nama: ");
+            mhsArray[i].nama = sc04.next();
+            System.out.print("Masukkan NIM: ");
+            mhsArray[i].nim = sc04.next();
+            System.out.print("Masukkan Jenis Kelamin: ");
+            mhsArray[i].kelamin = sc04.next().toUpperCase().charAt(0);
+            System.out.print("Masukkan IPK: ");
+            mhsArray[i].ipk = sc04.nextDouble();
+    
+        }
+
+        for(int i=0; i<mhsArray.length; i++) {
+            System.out.println("\nData Mahasiswa ke-" + (i+1));
+            System.out.println("Nama: " + mhsArray[i].nama);
+            System.out.println("NIM: " + mhsArray[i].nim);
+            System.out.println("Jenis Kelamin: " + mhsArray[i].kelamin);
+            System.out.println("Nilai IPK: " + mhsArray[i].ipk);
+        }
+
+        sc04.close();
+
+    }
+
+}
+```
+
+``Hasil Percobaan``
+
+![Hasil](./docs/4.2.png)
+
 
 ### 4.3 Latihan 3
 Modifikasi program Latihan no.2 di atas, sehingga bisa digunakan untuk menghitung rata-rata IPK, serta menampilkan data mahasiswa dengan IPK terbesar! (gunakan method untuk masing-masing proses tersebut)
