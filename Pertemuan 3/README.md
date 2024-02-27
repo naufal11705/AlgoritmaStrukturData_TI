@@ -255,12 +255,12 @@ Tambahkan konstruktor pada class Segitiga tersebut yang berisi parameter int a, 
 3. Tambahkan method hitungLuas() dan hitungKeliling() pada class Segitiga tersebut. Asumsi segitiga adalah segitiga siku-siku. (Hint: Anda dapat menggunakan bantuan library Math pada Java untuk mengkalkulasi sisi miring) <br>
     **Jawaban :**
     ```java
-    public int hitungLuas() {
-        return (int)(0.5 * alas * tinggi);
+    public double hitungLuas() {
+        return 0.5 * alas * tinggi;
     }
 
-    public int hitungKeliling() {
-        return alas + tinggi + (int)Math.sqrt(alas*alas + tinggi*tinggi);
+    public double hitungKeliling() {
+        return alas + tinggi + Math.sqrt(alas*alas + tinggi*tinggi);
     }
     ```
 
@@ -282,8 +282,11 @@ Tambahkan konstruktor pada class Segitiga tersebut yang berisi parameter int a, 
 5. Kemudian menggunakan looping, cetak luas dan keliling dengan cara memanggil method hitungLuas() dan hitungKeliling() <br>
     **Jawaban :**
     ```java
+    import java.text.DecimalFormat;
+
     public class ArraySegitiga {
         public static void main(String[] args) {
+            DecimalFormat df = new DecimalFormat("#.##");
             Segitiga[] sgArray = new Segitiga[4];
 
             sgArray[0] = new Segitiga(10, 4);
@@ -292,8 +295,8 @@ Tambahkan konstruktor pada class Segitiga tersebut yang berisi parameter int a, 
             sgArray[3] = new Segitiga(25, 10);
 
             for(int i=0; i<4; i++) {
-                System.out.println("Luas segitiga ke " + i + ": " + sgArray[i].hitungLuas());
-                System.out.println("Keliling segitiga ke " + i + ": " + sgArray[i].hitungKeliling());
+                System.out.println("Luas segitiga ke " + i + ": " + df.format(sgArray[i].hitungLuas()));
+                System.out.println("Keliling segitiga ke " + i + ": " + df.format(sgArray[i].hitungKeliling()));
             }
         }
     }
@@ -304,11 +307,10 @@ Tambahkan konstruktor pada class Segitiga tersebut yang berisi parameter int a, 
 ## Latihan Praktikum
 
 ### 4.1 Latihan 1
-Buatlah program yang dapat menghitung luas permukaan dan volume bangun ruang kerucut, limas segi empat sama sisi, dan bola. Buatlah 3 (tiga) class sesuai dengan jumlah jenis bangun ruang. Buatlah satu main class untuk membuat array of objects yang menginputkan atribut-atribut yang ada menggunakan konstruktor semua bangun ruang tersebut. Dengan ketentuan,
-a. Buat looping untuk menginputkan masing-masing atributnya, kemudian tampilkan luas permukaan dan volume dari tiap jenis bangun ruang tersebut.
-b. Pada kerucut, inputan untuk atribut hanya jari-jari dan sisi miring
-c. Pada limas segi empat sama sisi, inputan untuk atribut hanya panjang sisi alas dan 
-tinggi limas
+Buatlah program yang dapat menghitung luas permukaan dan volume bangun ruang kerucut, limas segi empat sama sisi, dan bola. Buatlah 3 (tiga) class sesuai dengan jumlah jenis bangun ruang. Buatlah satu main class untuk membuat array of objects yang menginputkan atribut-atribut yang ada menggunakan konstruktor semua bangun ruang tersebut. Dengan ketentuan, <br>
+a. Buat looping untuk menginputkan masing-masing atributnya, kemudian tampilkan luas permukaan dan volume dari tiap jenis bangun ruang tersebut. <br>
+b. Pada kerucut, inputan untuk atribut hanya jari-jari dan sisi miring <br>
+c. Pada limas segi empat sama sisi, inputan untuk atribut hanya panjang sisi alas dan tinggi limas <br>
 d. Pada bola, inpuntan untuk atribut hanya jari-jari
 
 ### 4.2 Latihan 2
@@ -379,33 +381,33 @@ public class Latihan2 {
 Modifikasi program Latihan no.2 di atas, sehingga bisa digunakan untuk menghitung rata-rata IPK, serta menampilkan data mahasiswa dengan IPK terbesar! (gunakan method untuk masing-masing proses tersebut)
 
 ```java
-    double HitungRataIPK(Mahasiswa[] mhsArr) {
-        double totalIpk = 0;
+double HitungRataIPK(Mahasiswa[] mhsArr) {
+    double totalIpk = 0;
 
-        for (Mahasiswa mhs : mhsArr) {
-            totalIpk += mhs.ipk;
-        }
-
-        return totalIpk / mhsArr.length;
+    for (Mahasiswa mhs : mhsArr) {
+        totalIpk += mhs.ipk;
     }
 
-    void TampilMhsIpkTertinggi(Mahasiswa[] mhsArr) {
-        double ipkTertinggi = 0;
-        Mahasiswa mhsIpkTertinggi = null;
+    return totalIpk / mhsArr.length;
+}
 
-        for (Mahasiswa mhs : mhsArr) {
-            if (mhs.ipk > ipkTertinggi) {
-                ipkTertinggi = mhs.ipk;
-                mhsIpkTertinggi = mhs;
-            }
+void TampilMhsIpkTertinggi(Mahasiswa[] mhsArr) {
+    double ipkTertinggi = 0;
+    Mahasiswa mhsIpkTertinggi = null;
+
+    for (Mahasiswa mhs : mhsArr) {
+        if (mhs.ipk > ipkTertinggi) {
+            ipkTertinggi = mhs.ipk;
+            mhsIpkTertinggi = mhs;
         }
-
-        System.out.println("\nData Mahasiswa dengan IPK Tertinggi:");
-        System.out.println("Nama: " + mhsIpkTertinggi.nama);
-        System.out.println("NIM: " + mhsIpkTertinggi.nim);
-        System.out.println("Jenis Kelamin: " + mhsIpkTertinggi.kelamin);
-        System.out.println("Nilai IPK: " + mhsIpkTertinggi.ipk);
     }
+
+    System.out.println("\nData Mahasiswa dengan IPK Tertinggi:");
+    System.out.println("Nama: " + mhsIpkTertinggi.nama);
+    System.out.println("NIM: " + mhsIpkTertinggi.nim);
+    System.out.println("Jenis Kelamin: " + mhsIpkTertinggi.kelamin);
+    System.out.println("Nilai IPK: " + mhsIpkTertinggi.ipk);
+}
 ```
 
 ``Hasil Percobaan``
