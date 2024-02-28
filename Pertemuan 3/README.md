@@ -60,31 +60,31 @@ public class PersegiPanjang {
 1. Berdasarkan uji coba 3.2, apakah class yang akan dibuat array of object harus selalu memiliki atribut dan sekaligus method?Jelaskan! <br>
     **Jawaban :**
     ``
-    yntkts
+    Tidak, class yang dibuat array of object tidak harus memiliki atribut sekaligus method, pada uji coba 3.2 program masih dapat berjalan meskipun pada Class PersegiPanjang hanya terdapat atribut.
     ``
 
 2. Apakah class PersegiPanjang memiliki konstruktor?Jika tidak, kenapa dilakukan pemanggilan konstruktur pada baris program berikut : <br>
     **Jawaban :**
     ``
-    yntkts
+    Pada class PersegiPanjang tidak terdapat konstruktor, namun sebenarnya class tersebut mempunyai konstruktor default yang dibuat secara otomatis oleh compiler java.
     ``
 
 3. Apa yang dimaksud dengan kode berikut ini: <br>
     **Jawaban :**
     ``
-    yntkts
+    Kode tersebut yaitu mendeklarasikan dan menginisiasi array dengan 3 elemen untuk menyimpan objek dari class PersegiPanjang.
     ``
 
 4. Apa yang dimaksud dengan kode berikut ini: <br>
     **Jawaban :**
     ``
-    yntkts
+    Kode tersebut merupakan inisialisasi array sekaligus mengisi atribut
     ``
 
 5. Mengapa class main dan juga class PersegiPanjang dipisahkan pada uji coba 3.2? <br>
     **Jawaban :**
     ``
-    yntkts
+    Class main dan PersegiPanjang dipisahkan agar lebih mudah dibaca, selain itu agar class tersebut dapat digunakan pada program lain tanpa mengubah class main
     ``
 
 ## Percobaan 2: Menerima Input Isian Array Menggunakan Looping
@@ -125,19 +125,51 @@ public class ArrayObjects {
 1. Apakah array of object dapat diimplementasikan pada array 2 Dimensi? <br>
     **Jawaban :**
     ``
-    yntkts
+    Ya, array of object dapat diimplementasikan pada array 2 Dimensi
     ``
 
 2. Jika jawaban soal no satu iya, berikan contohnya! Jika tidak, jelaskan! <br>
     **Jawaban :**
-    ``
-    yntkts
-    ``
+
+    ``Modifikasi ArraySegitiga menjadi array 2 dimensi``
+    ```java
+    import java.util.Scanner;
+
+    public class ArrayObjects {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+
+            PersegiPanjang[][] ppArray = new PersegiPanjang[2][2];
+
+            for(int i=0; i<ppArray.length; i++) {
+                for(int j=0; j<ppArray[i].length; j++) {
+                    ppArray[i][j] = new PersegiPanjang();
+                    System.out.println("Persegi panjang baris ke-" + i + ", kolom ke-" + j);
+                    System.out.print("Masukkan panjang: ");
+                    ppArray[i][j].panjang = sc.nextInt();
+                    System.out.print("Masukkan lebar: ");
+                    ppArray[i][j].lebar = sc.nextInt();
+                }
+            }
+
+            for(int i=0; i<ppArray.length; i++) {
+                for(int j=0; j<ppArray[i].length; j++) {
+                    System.out.println("Persegi panjang baris ke-" + i + ", kolom ke-" + j);
+                    System.out.println("Panjang: " + ppArray[i][j].panjang + ", Lebar: " + ppArray[i][j].lebar);
+                }
+            }
+            
+            sc.close();
+        }
+    }
+    ```
+
+    ![Hasil](./docs/2.3.2.png)
 
 3. Jika diketahui terdapat class Persegi yang memiliki atribut sisi bertipe integer, maka kode dibawah ini akan memunculkan error saat dijalankan. Mengapa? <br>
     **Jawaban :**
     ``
-    yntkts
+    Karena pgArray[] belum di inisialisasi sehingga masih bernilai null
     ``
 
 4. Modifikasi kode program pada praktikum 3.3 agar length array menjadi inputan dengan Scanner! <br>
@@ -180,8 +212,10 @@ public class ArrayObjects {
 5. Apakah boleh Jika terjadi duplikasi instansiasi array of objek, misalkan saja instansiasi dilakukan pada ppArray[i] sekaligus ppArray[0]? Jelaskan !
     **Jawaban :**
     ``
-    yntkts
+    Duplikasi instansiasi array of objek tidak menyebabkan error, namun data yang disimpan pada objek sebelumnya akan hilang, misalkan setelah kita mengisikan atribut pada ppArray[i], kemudian sebelum hasil inputan dicetak, terjadi instansiasi ppArray[0], maka data pada ppArray[0] akan hilang
     ``
+
+    ![Hasil](./docs/2.3.5.png)
 
 ## Percobaan 3: Penambahan Operasi Matematika di Dalam Method
 ### **3.1 Kode Percobaan**
@@ -230,7 +264,24 @@ public class ArrayBalok {
 1. Dapatkah konstruktor berjumlah lebih dalam satu kelas? Jelaskan dengan contoh! <br>
     **Jawaban :**
     ``
-    yntkts
+    Konstruktor dapat berjumlah lebih dalam satu kelas, contohnya adalah sebagai berikut
+    ``
+    ```java
+    public Buku04() {
+
+    }
+
+    public Buku04(String jud, String pg, int hal, int stok, int har) {
+        judul = jud;
+        pengarang = pg;
+        halaman = hal;
+        this.stok = stok;
+        harga = har;
+    }
+    ```
+
+    ``
+    Dalam kode tersebut terdapat 2 konstruktor, yang atas adalah konstruktor default, yang bawah adalah konstruktor berparameter. Selain itu, kita juga dapat membuat beberapa konstruktor asalkan parameternya berbeda.
     ``
 
 2. Jika diketahui terdapat class Segitiga seperti berikut ini:
