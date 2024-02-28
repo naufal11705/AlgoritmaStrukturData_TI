@@ -313,6 +313,145 @@ b. Pada kerucut, inputan untuk atribut hanya jari-jari dan sisi miring <br>
 c. Pada limas segi empat sama sisi, inputan untuk atribut hanya panjang sisi alas dan tinggi limas <br>
 d. Pada bola, inpuntan untuk atribut hanya jari-jari
 
+``Class Kerucut``
+```java
+import java.lang.Math;
+
+public class Kerucut {
+
+    public int jarijari;
+    public int sisimiring;
+
+    public double hitungLuasPermukaan() {
+        return Math.PI * jarijari * (sisimiring + jarijari);
+    }
+
+    public double hitungVolume() {
+        return (1.0 / 3) * Math.PI * Math.pow(jarijari, 2) * sisimiring;
+    }
+    
+}
+```
+
+``Class LimasSegiEmpat``
+```java
+public class LimasSegiEmpat {
+
+    public int sisiAlas;
+    public int tinggiLimas;
+
+    public double hitungLuasPermukaan() {
+        return (sisiAlas * sisiAlas) + (0.5 * (4 * sisiAlas) * tinggiLimas);
+    }
+
+    public double hitungVolume() {
+        return (1.0 / 3) * (sisiAlas * sisiAlas) * tinggiLimas;
+    }
+    
+}
+```
+
+``Class Bola``
+```java
+import java.lang.Math;
+
+public class Bola {
+
+    public int jarijari;
+
+    public double hitungLuasPermukaan() {
+        return 4 * Math.PI * Math.pow(jarijari, 2);
+    }
+
+    public double hitungVolume() {
+        return (4.0/3) * Math.PI * Math.pow(jarijari, 3);
+    }
+    
+}
+```
+
+``Class Latihan2``
+```java
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Latihan1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("#.##");
+
+        System.out.println("==============================");
+        System.out.print("Masukkan Jumlah Kerucut: ");
+        
+        Kerucut[] krArray = new Kerucut[sc.nextInt()];
+
+        for(int i=0; i<krArray.length; i++) {
+
+            krArray[i] = new Kerucut();
+            System.out.println("\nKerucut ke-" + (i+1));
+            System.out.print("Masukkan jari jari: ");
+            krArray[i].jarijari = sc.nextInt();
+            System.out.print("Masukkan sisi miring: ");
+            krArray[i].sisimiring = sc.nextInt();
+    
+        }
+
+        System.out.println("==============================");
+
+        System.out.print("\nMasukkan Jumlah Limas Segi Empat: ");
+        LimasSegiEmpat[] lseArray = new LimasSegiEmpat[sc.nextInt()];
+
+        for(int i=0; i<lseArray.length; i++) {
+
+            lseArray[i] = new LimasSegiEmpat();
+            System.out.println("\nLimas Segi Empat ke-" + (i+1));
+            System.out.print("Masukkan sisi alas: ");
+            lseArray[i].sisiAlas = sc.nextInt();
+            System.out.print("Masukkan tinggi limas: ");
+            lseArray[i].tinggiLimas = sc.nextInt();
+    
+        }
+
+        System.out.println("==============================");
+
+        System.out.print("\nMasukkan Jumlah Bola: ");
+        Bola[] blArray = new Bola[sc.nextInt()];
+
+        for(int i=0; i<blArray.length; i++) {
+
+            blArray[i] = new Bola();
+            System.out.println("\nBola ke-" + (i+1));
+            System.out.print("Masukkan jari jari: ");
+            blArray[i].jarijari = sc.nextInt();
+    
+        }
+
+        System.out.println("==============================");
+        
+        for(int i=0; i<krArray.length; i++) {
+            System.out.println("\nKerucut ke-" + (i+1));
+            System.out.println("Luas Permukaan: " + df.format(krArray[i].hitungLuasPermukaan()) + ", Volume: " + df.format(krArray[i].hitungVolume()));
+        }
+
+        for(int i=0; i<lseArray.length; i++) {
+            System.out.println("\nLimas Segi Empat ke-" + (i+1));
+            System.out.println("Luas Permukaan: " + df.format(lseArray[i].hitungLuasPermukaan()) + ", Volume: " + df.format(lseArray[i].hitungVolume()));
+        }
+
+        for(int i=0; i<blArray.length; i++) {
+            System.out.println("\nBola ke-" + (i+1));
+            System.out.println("Luas Permukaan: " + df.format(blArray[i].hitungLuasPermukaan()) + ", Volume: " + df.format(blArray[i].hitungVolume()));
+        }
+
+        sc.close();
+    }
+}
+```
+
+``Hasil Percobaan``
+
+![Hasil](./docs/4.3.png)
+
 ### 4.2 Latihan 2
 Sebuah kampus membutuhkan program untuk menampilkan informasi mahasiswa berupa nama, nim, jenis kelamin dan juga IPK mahasiswa.  Program dapat menerima input semua informasi tersebut, kemudian menampilkanya kembali ke user. Implementasikan program tersebut jika  dimisalkan terdapat 3 data mahasiswa yang tersedia.
 
