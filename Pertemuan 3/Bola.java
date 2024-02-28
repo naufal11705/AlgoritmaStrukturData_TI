@@ -4,10 +4,6 @@ public class Bola {
 
     public int jarijari;
 
-    public Bola(int r) {
-        jarijari = r;
-    }
-
     public double hitungLuasPermukaan() {
         return 4 * Math.PI * Math.pow(jarijari, 2);
     }
@@ -17,4 +13,3 @@ public class Bola {
     }
     
 }
-
