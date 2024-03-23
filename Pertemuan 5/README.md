@@ -106,6 +106,7 @@ public class MainFaktorial {
     **Jawaban :**
     ``
     fakto *= 1 melakukan perulangan berupa perkalian fakto dengan variabel i hingga variable i sama dengan input n, sedangkan fakto = n * faktorialDC(n-1) melakukan perulangan menggunakan metode rekursif.
+    ``
 
 ## Percobaan 2: Menghitung Hasil Pangkat dengan Algoritma Brute Force dan Divide and Conquer
 ### **2.1 Kode Percobaan**
@@ -375,9 +376,48 @@ public class MainSum {
 
 3. Program perhitungan keuntungan suatu perusahaan ini hanya untuk satu perusahaan saja. Bagaimana cara menghitung sekaligus keuntungan beberapa bulan untuk beberapa perusahaan.(Setiap perusahaan bisa saja memiliki jumlah bulan berbeda-beda)? Buktikan dengan program! <br>
     **Jawaban :**
-    ``
-    yntkts
-    ``
+    ```java
+    import java.util.Scanner;
+
+    public class MainSum {
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("============================");
+            System.out.println("Program Menghitung Keuntungan Total (Satuan Juta, Misal 5.9)");
+
+            System.out.print("Masukkan jumlah perusahaan: ");
+            int jml = sc.nextInt();
+
+            for(int i=0; i < jml; i++) {
+                System.out.println("\n\nPERUSAHAAN KE "+(i+1));
+                System.out.print("Masukkan jumlah bulan : ");
+                int elm = sc.nextInt();
+        
+                Sum sm = new Sum(elm);
+                System.out.println("==========================================");
+                for (int j = 0; j < sm.elemen; j++) {
+                    System.out.print("Masukkan untung bulan ke - "+(j+1)+" = ");
+                    sm.keuntungan[j] = sc.nextDouble();
+                }
+        
+                System.out.println("\n\nPENDAPATAN PERUSAHAAN KE "+(i+1));
+                System.out.println("====================================================");
+                System.out.println("Algoritma Brute Force");
+                System.out.println("Total keuntungan perusahaan selama " + sm.elemen + " bulan adalah " +sm.totalBF(sm.keuntungan));
+                System.out.println("====================================================");
+                System.out.println("Algoritma Divide Conquer");
+                System.out.printf("Total keuntungan perusahaan selama %d bulan adalah %.2f", sm.elemen, sm.totalDC(sm.keuntungan, 0, sm.elemen-1));
+        
+                
+            }
+            
+            sc.close();
+
+        }
+    }
+    ```
+
+![Hasil](./docs/3.3.3.png)
 
 ## Latihan Praktikum
 
@@ -387,3 +427,89 @@ Tentukan: <br>
 a) top_acceleration tertinggi menggunakan Divide and Conquer! <br>
 b) top_acceleration terendah menggunakan Divide and Conquer! <br>
 c) Rata-rata top_power dari seluruh mobil menggunakan Brute Force!
+
+``Mobil.java``
+```java
+public class Mobil {
+
+    String merek, tipe;
+    int tahun, top_acceleration, top_power;
+
+    Mobil(String merek, String tipe, int tahun, int top_acceleration, int top_power) {
+        this.merek = merek;
+        this.tipe = tipe;
+        this.tahun = tahun;
+        this.top_acceleration = top_acceleration;
+        this.top_power = top_power;
+    }
+
+    int getHighestAccel(Mobil arr[], int l, int r) {
+        if (l == r) {
+            return arr[l].top_acceleration;
+        }
+
+        int mid = (r + l) / 2;
+
+        int lHighest = getHighestAccel(arr, l, mid);
+        int rHighest = getHighestAccel(arr, mid + 1, r);
+
+        return Math.max(lHighest, rHighest);
+    }
+
+    int getLowestAccel(Mobil arr[], int l, int r) {
+        if (l == r) {
+            return arr[l].top_acceleration;
+        }
+
+        int mid = (r + l) / 2;
+
+        int lLowest = getLowestAccel(arr, l, mid);
+        int rLowest = getLowestAccel(arr, mid + 1, r);
+
+        return Math.min(lLowest, rLowest);
+    }
+
+    double getAvgTopPower(Mobil arr[]) {
+        double total = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            total += arr[i].top_power;
+        }
+
+        return total / arr.length;
+    }
+
+}
+```
+
+``MainMobil.java``
+```java
+public class MainMobil {
+    public static void main(String[] args) {
+        String[][] arrayMobil = {
+            {"BMW", "M2 Coupe", "2016", "6816", "728"},
+            {"Ford" , "Fiesta ST", "2014", "3921", "575"},
+            {"Nissan", "370Z", "2009", "4360", "657"},
+            {"Subaru", "BRZ", "2014", "4058", "609"},
+            {"Subaru", "Impreza WRX STI", "2013", "6255", "703"},
+            {"Toyota", "AE86 Trueno", "1986", "3700", "553"},
+            {"Toyota", "86/GT86", "2014", "4180", "609"},
+            {"Volkswagen", "Golf GTI", "2014", "4180", "631"},
+        };
+        
+        Mobil mobil[] = new Mobil[8];
+
+        for (int i = 0; i < mobil.length; i++) {
+            mobil[i] = new Mobil(arrayMobil[i][0], arrayMobil[i][1], Integer.parseInt(arrayMobil[i][2]), Integer.parseInt(arrayMobil[i][3]),
+                    Integer.parseInt(arrayMobil[i][4]));
+        }
+
+        System.out.println("top_acceleration tertinggi : " + mobil[0].getHighestAccel(mobil, 0, mobil.length - 1));
+        System.out.println("top_acceleration terendah : " + mobil[0].getLowestAccel(mobil, 0, mobil.length - 1));
+        System.out.println("Rata-rata top_power : " + mobil[0].getAvgTopPower(mobil));
+
+    }
+}
+```
+
+![Hasil](./docs/4.1.png)
