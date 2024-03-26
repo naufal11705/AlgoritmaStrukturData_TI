@@ -351,8 +351,13 @@ public class Hotel {
 
 ``MainHotel.java``
 ```java
+import java.util.Scanner;
+
 public class MainHotel {
     public static void main(String[] args) {
+
+        Scanner sc04 = new Scanner(System.in);
+
         String[][] arrayHotel = {
             {"Hotel Indonesia Kempinski", "Jakarta", "1000000", "2"},
             {"Grand Hyatt Bali", "Bali", "1500000", "5"},
@@ -376,14 +381,38 @@ public class MainHotel {
         System.out.println("Daftar Hotel sebelum diurutkan:");
         hotelService.tampilAll();
 
-        System.out.println("Daftar Hotel setelah diurutkan sesuai rating bintang:");
-        hotelService.selectionSortBintang();
-        hotelService.tampilAll();
+        System.out.println("Pilihan filter :");
+        System.out.println("[1] Harga Ascending");
+        System.out.println("[2] Bintang Descending");
+        System.out.print("Pilihan anda : ");
 
-        System.out.println("Daftar Hotel setelah diurutkan sesuai harga:");
-        hotelService.bubbleSortHarga();
-        hotelService.tampilAll();
+        switch (sc04.nextInt()) {
+            case 1:
+                System.out.println("Daftar hotel filter harga ascending :");
+                System.out.println("-- BUBBLE SORT --");
+                hotelService.bubbleSortHarga();
+                hotelService.tampilAll();
 
+                System.out.println("-- SELECTION SORT --");
+                hotelService.selectionSortHarga();
+                hotelService.tampilAll();
+                break;
+
+            case 2:
+                System.out.println("Daftar hotel filter rating bintang descending :");
+                System.out.println("-- BUBBLE SORT --");
+                hotelService.bubbleSortBintang();
+                hotelService.tampilAll();
+
+                System.out.println("-- SELECTION SORT --");
+                hotelService.selectionSortBintang();
+                hotelService.tampilAll();
+                break;
+
+            default:
+                System.out.println("Invalid choice!");
+                break;
+        }
     }
 }
 ```
