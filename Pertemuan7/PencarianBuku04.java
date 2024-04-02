@@ -32,11 +32,17 @@ public class PencarianBuku04 {
 
     public int FindSeqSearch(String cari) {
         int posisi = -1;
+        int count = 0;
+
         for (int j=0; j<listBk.length; j++) {
             if (listBk[j].judulBuku.equalsIgnoreCase(cari)){
                 posisi = j;
-                break;
+                count++;
             }
+        }
+
+        if (count > 1) {
+            System.out.println("Jumlah buku dengan judul yang sama sebanyak " + count);
         }
         return posisi;
     };
@@ -85,6 +91,19 @@ public class PencarianBuku04 {
         }
     }
 
+    public Buku04 findBuku(int cari) {
+        int posisi = -1;
+
+        for (int i = 0; i < listBk.length; i++) {
+            if (Integer.parseInt(listBk[i].kodeBuku) == cari) {
+                posisi = i;
+                break;
+            }
+        }
+
+        return listBk[posisi];
+    }
+
     public int FindBinarySearch(int cari, int left, int right) {
         int mid;
         if (right >= left) {
@@ -104,6 +123,27 @@ public class PencarianBuku04 {
         int mid;
         if (right >= left) {
             mid = left + (right - left) / 2;
+
+            for (int j=mid; j<listBk.length; j++) {
+                if(listBk[j].judulBuku.length() == cari.length()) {
+                    if (listBk[j].judulBuku.equalsIgnoreCase(cari)){
+                        return j;
+                    }
+                } else {
+                    break;
+                }
+            }
+
+            for (int j=mid; j<listBk.length; j--) {
+                if(listBk[j].judulBuku.length() == cari.length()) {
+                    if (listBk[j].judulBuku.equalsIgnoreCase(cari)){
+                        return j;
+                    }
+                } else {
+                    break;
+                }
+            }
+
             if (listBk[mid].judulBuku.equalsIgnoreCase(cari)) {
                 return (mid);
             } else if (listBk[mid].judulBuku.length() > cari.length()) {
@@ -112,6 +152,7 @@ public class PencarianBuku04 {
                 return FindBinarySearch(cari, mid + 1, right);
             }
         }
+
         return -1;
     }
 
