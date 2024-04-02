@@ -181,9 +181,29 @@ public class BukuMain04 {
 
 3. Buat method baru dengan nama FindBuku menggunakan konsep sequential search dengan tipe method dari FindBuku adalah BukuNoAbsen. Sehingga Anda bisa memanggil method tersebut pada class BukuMain seperti gambar berikut : <br> 
     **Jawaban :**
-    ``
-    ?
-    ``
+    ``PencarianBuku04.java``
+    ```java
+        public Buku04 findBuku(int cari) {
+            int posisi = -1;
+
+            for (int i = 0; i < listBk.length; i++) {
+                if (Integer.parseInt(listBk[i].kodeBuku) == cari) {
+                    posisi = i;
+                    break;
+                }
+            }
+
+            return listBk[posisi];
+        }
+    ```
+
+    ``BukuMain04.java``
+    ```java
+        Buku04 dataBuku = data.findBuku(cari);
+        dataBuku.tampilDataBuku();
+    ```
+
+    ![Hasil](./docs/1.3.3.png)
 
 ## Percobaan 2: Searching / Pencarian Menggunakan Binary Search
 ### **2.1 Kode Percobaan**
@@ -429,6 +449,27 @@ public class MergeSortMain04 {
         int mid;
         if (right >= left) {
             mid = left + (right - left) / 2;
+
+            for (int j=mid; j<listBk.length; j++) {
+                if(listBk[j].judulBuku.length() == cari.length()) {
+                    if (listBk[j].judulBuku.equalsIgnoreCase(cari)){
+                        return j;
+                    }
+                } else {
+                    break;
+                }
+            }
+
+            for (int j=mid; j<listBk.length; j--) {
+                if(listBk[j].judulBuku.length() == cari.length()) {
+                    if (listBk[j].judulBuku.equalsIgnoreCase(cari)){
+                        return j;
+                    }
+                } else {
+                    break;
+                }
+            }
+
             if (listBk[mid].judulBuku.equalsIgnoreCase(cari)) {
                 return (mid);
             } else if (listBk[mid].judulBuku.length() > cari.length()) {
@@ -437,6 +478,7 @@ public class MergeSortMain04 {
                 return FindBinarySearch(cari, mid + 1, right);
             }
         }
+        
         return -1;
     }
 ```
@@ -464,3 +506,26 @@ public class MergeSortMain04 {
 ![Hasil](./docs/4.2.2.2.png)
 
 - Buat aturan untuk mendeteksi hasil pencarian judul buku yang lebih dari 1 hasil dalam bentuk kalimat peringatan! Pastikan algoritma yang diterapkan sesuai dengan kasus yang diberikan!
+
+```java
+    public int FindSeqSearch(String cari) {
+        int posisi = -1;
+        int count = 0;
+
+        for (int j=0; j<listBk.length; j++) {
+            if (listBk[j].judulBuku.equalsIgnoreCase(cari)){
+                posisi = j;
+                count++;
+            }
+        }
+
+        if (count > 1) {
+            System.out.println("Jumlah buku dengan judul yang sama sebanyak " + count);
+        }
+        return posisi;
+    };
+```
+
+### **4.2.3 Verifikasi Hasil Percobaan**
+
+![Hasil](./docs/4.2.3.png)
