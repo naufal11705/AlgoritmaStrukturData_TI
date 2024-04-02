@@ -37,6 +37,10 @@ public class BukuMain04 {
         System.out.println("Masukkan Kode Buku yang dicari: ");
         System.out.print("Kode Buku: ");
         int cari = s.nextInt();
+
+        Buku04 dataBuku = data.findBuku(cari);
+        dataBuku.tampilDataBuku();
+
         System.out.println("===================================");
         System.out.println("Menggunakan Sequential Search");
         int posisi = data.FindSeqSearch(cari);
@@ -49,7 +53,7 @@ public class BukuMain04 {
         data.TampilPosisi(cari, posisi);
         data.TampilData(cari, posisi);
 
-        /*System.out.println("---------------------------------------------"); 
+        System.out.println("---------------------------------------------"); 
         System.out.println("---------------------------------------------"); 
         System.out.println("Pencarian Data: ");
         System.out.println("Masukkan Judul Buku yang dicari: ");
@@ -69,6 +73,9 @@ public class BukuMain04 {
         System.out.println("Menggunakan Binary Search");
         posisi = data.FindBinarySearch(search, 0, jumBuku - 1);
         data.TampilPosisi(posisi);
-        data.TampilData(posisi);*/
+        data.TampilData(posisi);
+
+        s.close();
+        s1.close();
     }
 }
