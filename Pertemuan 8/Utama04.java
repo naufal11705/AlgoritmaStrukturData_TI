@@ -12,7 +12,9 @@ public class Utama04 {
             System.out.println("2. Ambil barang");
             System.out.println("3. Tampilkan tumpukan barang");
             System.out.println("4. Lihat barang teratas");
-            System.out.println("5. Keluar");
+            System.out.println("5. Lihat barang terbawah");
+            System.out.println("6. Cari barang");
+            System.out.println("7. Keluar");
             System.out.print("Pilih Operasi: ");
             int pilihan = scanner.nextInt();
             scanner.nextLine();
@@ -43,6 +45,16 @@ public class Utama04 {
                     break;
 
                 case 5:
+                    gudang.lihatBarangTerbawah();
+                    break;
+
+                case 6:
+                    System.out.print("Masukkan key: ");
+                    String nm = scanner.nextLine();
+                    gudang.cariBarang(nm);
+                    break;
+
+                case 7:
                     System.exit(0);
                     break;
             
