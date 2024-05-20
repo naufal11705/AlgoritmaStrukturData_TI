@@ -1,3 +1,4 @@
+package Praktikum;
 public class Node {
     int data;
     Node next;

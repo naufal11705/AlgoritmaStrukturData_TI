@@ -1,3 +1,4 @@
+package Praktikum;
 public class SingleLinkedList {
     Node head, tail;
 
@@ -10,7 +11,7 @@ public class SingleLinkedList {
             Node tmp = head;
             System.out.print("Isi Linked List: ");
             while (tmp != null) {
-                System.out.print(tmp.data + "\t");
+                System.out.print("\t" + tmp.data);
                 tmp = tmp.next;
             }
             System.out.println("");
@@ -114,15 +115,15 @@ public class SingleLinkedList {
         if(isEmpty()){
             System.out.println("Linked list masih kosong,"
                     + "tidak dapat dihapus");
-        } else if (head != tail) {
+        } else if (head == tail) {
             head = tail = null;
         } else {
             Node temp = head;
-            while (temp.next != null) {
+            while (temp.next != tail) {
                 temp = temp.next;
             }
             temp.next = null;
-            tail = temp.next;
+            tail = temp;
         }
     }
 
